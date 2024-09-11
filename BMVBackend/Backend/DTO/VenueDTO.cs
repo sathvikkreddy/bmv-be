@@ -1,8 +1,7 @@
-﻿namespace Backend.Models
+﻿namespace Backend.DTO
 {
-    public class Venue
+    public class VenueDTO
     {
-        public int Id { get; set; }
         public DateTime CreatedAt { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
@@ -10,10 +9,5 @@
         public string Description { get; set; }
         public bool IsAcceptingBookings { get; set; }
         public int ProviderId { get; set; }
-
-        public ICollection<Booking> Bookings { get; set; }
-        public ICollection<Slot> Slots { get; set; }
-
-        public ICollection<BookedSlot> BookedSlots { get; set; }
     }
 }
