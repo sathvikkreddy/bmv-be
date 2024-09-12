@@ -1,4 +1,6 @@
 ﻿using Backend.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 namespace Backend.Services
 {

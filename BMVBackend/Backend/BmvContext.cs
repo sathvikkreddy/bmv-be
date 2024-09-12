@@ -11,11 +11,11 @@ namespace Backend
         public DbSet<Slot> Slots { get; set; }
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<BookedSlot> BookedSlots { get; set; }
+        public DbSet<Category> Categories { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(@"server=.\sqlexpress;initial catalog=bmv;user id=sa;password=Pass@123;trustservercertificate=true");
         }
- 
     }
 }

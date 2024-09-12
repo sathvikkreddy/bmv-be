@@ -34,6 +34,7 @@ namespace Backend.Services
                 uu.Email = u.Email;
                 uu.Password = u.Password;
                 uu.CreatedAt = u.CreatedAt;
+                uu.Mobile = u.Mobile;
                 _bmvContext.SaveChanges();
                 return true;
             }

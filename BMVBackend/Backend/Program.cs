@@ -1,4 +1,6 @@
 
+using Microsoft.EntityFrameworkCore;
+
 namespace Backend
 {
     public class Program
@@ -14,8 +16,11 @@ namespace Backend
             //builder.Services.AddEndpointsApiExplorer();
             //builder.Services.AddSwaggerGen();
 
-            var app = builder.Build();
+            //builder.Services.AddDbContext<BmvContext>(options=>
+            //options.UseSqlServer(builder.Configuration.GetConnectionString("Bmv")));
 
+            var app = builder.Build();
+            
             // Configure the HTTP request pipeline.
             /*if (app.Environment.IsDevelopment())
             {
