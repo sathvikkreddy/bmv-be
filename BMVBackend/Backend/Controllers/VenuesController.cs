@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Backend.DTO.Slot;
+using Backend.DTO.Venue;
+using Backend.Services;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -6,8 +9,14 @@ namespace Backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class VenueController : ControllerBase
+    public class VenuesController : ControllerBase
     {
+        IVenuesService _service;
+        public VenuesController(IVenuesService service)
+        {
+            _service = service;
+        }
+
         // GET: api/<VenueController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -24,14 +33,22 @@ namespace Backend.Controllers
 
         // POST api/<VenueController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] PostVenueDTO venueWithSlotDetails)
         {
+            var v = _service.AddVenue(venueWithSlotDetails);
+            return Ok(v);
         }
 
         // PUT api/<VenueController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Put(int id, [FromBody] PutVenueDTO v)
         {
+            var uv = _service.UpdateVenue(id, v);
+            if (uv != null)
+            {
+                return Ok(uv);
+            }
+            return NotFound();
         }
 
         // DELETE api/<VenueController>/5

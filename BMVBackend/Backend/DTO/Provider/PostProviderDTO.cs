@@ -1,10 +1,10 @@
-﻿namespace Backend.DTO
+﻿namespace Backend.DTO.Provider
 {
-    public class UserDTO
+    public class PostProviderDTO
     {
+        public string Name { get; set; }
         public string Email { get; set; }
         public string Mobile { get; set; }
         public string Password { get; set; }
-        public DateTime? CreatedAt { get; set; } = DateTime.UtcNow.AddHours(5).AddMinutes(30);
     }
 }

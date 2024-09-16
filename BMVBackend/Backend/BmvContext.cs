@@ -5,7 +5,7 @@ namespace Backend
 {
     public class BmvContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<Provider> Providers { get; set; }
         public DbSet<Venue> Venues { get; set; }
         public DbSet<Slot> Slots { get; set; }
@@ -17,5 +17,10 @@ namespace Backend
             base.OnConfiguring(optionsBuilder);
             optionsBuilder.UseSqlServer(@"server=.\sqlexpress;initial catalog=bmv;user id=sa;password=Pass@123;trustservercertificate=true");
         }
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    base.OnModelCreating(modelBuilder);
+        //    var customer = modelBuilder.Entity<Customer>();
+        //}
     }
 }

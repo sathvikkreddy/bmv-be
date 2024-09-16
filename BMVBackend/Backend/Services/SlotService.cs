@@ -1,4 +1,5 @@
-﻿using Backend.Models;
+﻿using Backend.DTO.Slot;
+using Backend.Models;
 
 namespace Backend.Services
 {
@@ -26,21 +27,19 @@ namespace Backend.Services
                 return false;
             }
         }
-        public bool UpdateSlot(int id,Slot s)
+        public Slot UpdateSlot(int id,PutSlotDTO s)
         {
             var us = _bmvContext.Slots.Find(id);
-            if (us != null)
+            if (us == null)
             {
-                us.VenueId = s.VenueId;
-                us.Start = s.Start;
-                us.End = s.End;
-                _bmvContext.SaveChanges();
-                return true;
+                return null;
             }
-            else
-            {
-                return false;
-            }
+            Console.WriteLine(s.WeekdayPrice);
+            us.WeekendPrice = s.WeekendPrice == null? us.WeekendPrice : (double)s.WeekendPrice;
+            us.WeekdayPrice = s.WeekdayPrice == null ? us.WeekdayPrice : (double)s.WeekdayPrice;
+            us.IsBlocked = s.IsBlocked == null ? us.IsBlocked : (bool)s.IsBlocked;
+            _bmvContext.SaveChanges();
+            return us;
         }
         public bool DeleteSlot(int id)
         {
