@@ -19,16 +19,25 @@ namespace Backend.Controllers
 
         // GET: api/<VenueController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var v = _service.GetAllVenues();
+            if (v == null) {
+                return BadRequest();
+            }
+            return Ok(v);
         }
 
         // GET api/<VenueController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            var v = _service.GetVenueById(id);
+            if(v == null)
+            {
+                return NotFound();
+            }
+            return Ok(v);
         }
 
         // POST api/<VenueController>

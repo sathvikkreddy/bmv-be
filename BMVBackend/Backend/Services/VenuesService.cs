@@ -50,7 +50,7 @@ namespace Backend.Services
             v.Image3 = "";
             _bmvContext.Categories.Add(new Category() { Name=venueWithSlotDetails.Category});
             _bmvContext.SaveChanges();
-            Category c = _bmvContext.Categories.Where(c => c.Name == venueWithSlotDetails.Name).FirstOrDefault();
+            Category c = _bmvContext.Categories.Where(c => c.Name == venueWithSlotDetails.Category).FirstOrDefault();
             v.CategoryId = c.Id;
             _bmvContext.Venues.Add(v);
             _bmvContext.SaveChanges();

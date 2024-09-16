@@ -1,4 +1,5 @@
-﻿using Backend.DTO.Slot;
+﻿using Backend.DTO;
+using Backend.DTO.Slot;
 using Backend.Models;
 
 namespace Backend.Services
@@ -9,6 +10,39 @@ namespace Backend.Services
         public List<Slot> GetAllSlots()
         {
             return _bmvContext.Slots.ToList();
+        }
+        public List<GetSlotDTO> GetAllSlots(int venueId, DateOnly date)
+        {
+            List<GetSlotDTO> availableSlots = new List<GetSlotDTO>();
+            var allSlots = _bmvContext.Slots.Where(s=>s.VenueId==venueId).ToList();
+            var bookedSlots = _bmvContext.BookedSlots.Where(bs=>bs.Date==date).ToList();
+            foreach (var slot in allSlots)
+            {
+                GetSlotDTO newSlot = new GetSlotDTO();
+                newSlot.Start = slot.Start;
+                newSlot.End = slot.End;
+                newSlot.WeekendPrice = slot.WeekendPrice;
+                newSlot.WeekdayPrice = slot.WeekdayPrice;
+                if (slot.IsBlocked)
+                {
+                    newSlot.Status = "blocked";
+                    break;
+                }
+                foreach (var bs in bookedSlots)
+                {
+                    
+                    if(bs.SlotId == slot.Id)
+                    {
+                        newSlot.Status = "booked";
+                    }
+                    else
+                    {
+                        newSlot.Status = "available";
+                    }
+                }
+                availableSlots.Add(newSlot);
+            }
+            return availableSlots;
         }
         public Slot GetSlotById(int id)
         {
