@@ -15,6 +15,7 @@ namespace Backend
             builder.Services.AddScoped<IProviderService, ProvidersService>();
             builder.Services.AddScoped<ICustomersService, CustomersService>();
             builder.Services.AddScoped<IVenuesService, VenuesService>();
+            builder.Services.AddScoped<IBookingService, BookingService>();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();

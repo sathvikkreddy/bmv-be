@@ -1,8 +1,9 @@
-﻿using Backend.Models;
+﻿using Backend.DTO;
+using Backend.Models;
 
 namespace Backend.Services
 {
-    public class BookingService
+    public class BookingService : IBookingService
     {
         private readonly BmvContext _bmvContext = new BmvContext();
         public List<Booking> GetAllBookings()
@@ -13,18 +14,26 @@ namespace Backend.Services
         {
             return _bmvContext.Bookings.Find(id);
         }
-        public bool AddBooking(Booking b)
+        public bool AddBooking(BookingDTO value)
         {
-            try
+            Booking b = new Booking();
+            b.UserId = value.UserId;
+            b.Date = DateOnly.ParseExact(value.Date, "dd-MM-yyyy") ;
+            b.Status = "upcoming";
+            List<Slot> slots = new List<Slot>();
+            foreach (var s in value.SlotIds)
             {
-                _bmvContext.Bookings.Add(b);
-                _bmvContext.SaveChanges();
-                return true;
+                var slot = _bmvContext.Slots.Find(s);
+                if (slot != null)
+                {
+                    slots.Add(slot);
+                    b.ProviderId = _bmvContext.Venues.Find(slot.VenueId).ProviderId;
+                    b.VenueId = slot.VenueId;
+                }
             }
-            catch
-            {
-                return false;
-            }
+            _bmvContext.SaveChanges();
+            Console.WriteLine(b.Id);
+            return true;
         }
         public bool UpdateBooking(int id, Booking b)
         {
@@ -33,13 +42,10 @@ namespace Backend.Services
             {
                 ub.CreatedAt = b.CreatedAt;
                 ub.Status = b.Status;
-                ub.ProviderId = b.ProviderId;
-                ub.UserId = b.UserId;
                 ub.End = b.End;
                 ub.Date = b.Date;
                 ub.Start = b.Start;
                 ub.Amount = b.Amount;
-                ub.VenueId = b.VenueId;
                 _bmvContext.SaveChanges();
                 return true;
             }
@@ -48,7 +54,7 @@ namespace Backend.Services
         public bool DeleteBooking(int id)
         {
             var db = _bmvContext.Bookings.Find(id);
-            if(db!=null)
+            if (db != null)
             {
                 _bmvContext.Bookings.Remove(db);
                 _bmvContext.SaveChanges();

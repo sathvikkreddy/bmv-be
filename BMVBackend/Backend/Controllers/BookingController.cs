@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Backend.DTO;
+using Backend.Models;
+using Backend.Services;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,6 +11,11 @@ namespace Backend.Controllers
     [ApiController]
     public class BookingController : ControllerBase
     {
+        IBookingService _service;
+        public BookingController(IBookingService bookingService)
+        {
+            _service = bookingService;
+        }
         // GET: api/<BookingController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -24,8 +32,15 @@ namespace Backend.Controllers
 
         // POST api/<BookingController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Post([FromBody] BookingDTO value)
         {
+
+            if (_service.AddBooking(value))
+            {
+                return Ok();
+            }
+            return BadRequest();
+
         }
 
         // PUT api/<BookingController>/5
