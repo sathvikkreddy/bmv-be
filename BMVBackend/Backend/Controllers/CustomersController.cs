@@ -1,4 +1,5 @@
 ﻿using Backend.DTO.Customer;
+using Backend.Helpers;
 using Backend.Models;
 using Backend.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -74,5 +75,25 @@ namespace Backend.Controllers
         public void Delete(int id)
         {
         }
+        [HttpPost]
+        [Route("login")]
+        public IActionResult Validate(CustomerLoginDTO value)
+        {
+            if (value == null)
+            {
+                return BadRequest();
+            }
+            if (_service.ValidateCustomer(value))
+            {
+
+                return Ok(new TokenResult()
+                {
+                    Status = "success",
+                    Token = new TokenHelper().GenerateCustomerToken(value)
+                });
+            }
+            return NotFound(new TokenResult() { Status = "failed", Token = null });
+        }
+
     }
 }

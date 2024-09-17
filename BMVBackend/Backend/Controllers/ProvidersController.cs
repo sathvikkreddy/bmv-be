@@ -1,4 +1,5 @@
 ﻿using Backend.DTO.Provider;
+using Backend.Helpers;
 using Backend.Models;
 using Backend.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -73,5 +74,26 @@ namespace Backend.Controllers
         public void Delete(int id)
         {
         }
+
+        [HttpPost]
+        [Route("login")]
+        public IActionResult Validate(ProviderLoginDTO value)
+        {
+            if (value == null)
+            {
+                return BadRequest();
+            }
+            if (_service.ValidateProvider(value))
+            {
+
+                return Ok(new TokenResult()
+                {
+                    Status = "success",
+                    Token = new TokenHelper().GenerateProviderToken(value)
+                });
+            }
+            return NotFound(new TokenResult() { Status = "failed", Token = null });
+        }
+
     }
 }

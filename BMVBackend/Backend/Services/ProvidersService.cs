@@ -1,4 +1,5 @@
 ﻿using Backend.DTO;
+using Backend.DTO.Provider;
 using Backend.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -85,5 +86,17 @@ namespace Backend.Services
                 return false;
             }
         }
+        public bool ValidateProvider(ProviderLoginDTO provider)
+        {
+            if (provider == null)
+            {
+                throw new ArgumentNullException(nameof(provider));
+            }
+            var result = _bmvContext.Providers
+        .FirstOrDefault(p => p.Email == provider.Email && p.Password == provider.Password);
+
+            return result != null;
+        }
+
     }
 }

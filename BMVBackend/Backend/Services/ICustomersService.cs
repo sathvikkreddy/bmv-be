@@ -1,4 +1,5 @@
-﻿using Backend.Models;
+﻿using Backend.DTO.Customer;
+using Backend.Models;
 
 namespace Backend.Services
 {
@@ -9,5 +10,6 @@ namespace Backend.Services
         List<Customer> GetAllCustomers();
         Customer GetCustomerById(int id);
         bool UpdateCustomer(int id, Customer u);
+        bool ValidateCustomer(CustomerLoginDTO customer);
     }
 }

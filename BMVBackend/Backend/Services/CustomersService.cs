@@ -1,4 +1,5 @@
-﻿using Backend.Models;
+﻿using Backend.DTO.Customer;
+using Backend.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Services
@@ -73,5 +74,17 @@ namespace Backend.Services
             }
             return false;
         }
+        public bool ValidateCustomer(CustomerLoginDTO customer)
+        {
+            if (customer == null)
+            {
+                throw new ArgumentNullException(nameof(customer));
+            }
+            var result = _bmvContext.Customers
+        .FirstOrDefault(u => u.Email == customer.Email && u.Password == customer.Password);
+
+            return result != null;
+        }
+
     }
 }

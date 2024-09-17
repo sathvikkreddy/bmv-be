@@ -1,4 +1,5 @@
-﻿using Backend.Models;
+﻿using Backend.DTO.Provider;
+using Backend.Models;
 
 namespace Backend.Services
 {
@@ -9,5 +10,6 @@ namespace Backend.Services
         List<Provider> GetAllProviders();
         Provider GetProviderById(int id);
         Provider UpdateProvider(int id, Provider p);
+        bool ValidateProvider(ProviderLoginDTO p);
     }
 }
