@@ -46,6 +46,8 @@ namespace Backend.Controllers
         public IActionResult Get(int id)
         {
             var v = _service.GetVenueById(id);
+            var cservice = new CategoryService();
+            var cName = cservice.GetCategoryById(v.CategoryId).Name;
             if(v == null)
             {
                 return NotFound();

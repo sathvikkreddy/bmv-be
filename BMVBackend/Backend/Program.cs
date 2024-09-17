@@ -12,6 +12,7 @@ namespace Backend
 
             // Add services to the container.
             builder.Services.AddControllers();
+            builder.Services.AddCors();
             builder.Services.AddScoped<IProviderService, ProvidersService>();
             builder.Services.AddScoped<ICustomersService, CustomersService>();
             builder.Services.AddScoped<IVenuesService, VenuesService>();
@@ -25,6 +26,12 @@ namespace Backend
             //options.UseSqlServer(builder.Configuration.GetConnectionString("Bmv")));
 
             var app = builder.Build();
+            app.UseCors(options =>
+            {
+                options.AllowAnyMethod();
+                options.AllowAnyHeader();
+                options.AllowAnyOrigin();
+            });
             
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
