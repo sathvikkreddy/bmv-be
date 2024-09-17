@@ -18,9 +18,19 @@ namespace Backend.Controllers
         }
         // GET: api/<SlotController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get([FromQuery] string date, [FromQuery] int venueId)
         {
-            return new string[] { "value1", "value2" };
+            if (date == null || date == "" || venueId == 0)
+            {
+                return BadRequest();
+            }
+            var d = DateOnly.ParseExact(date, "dd-MM-yyyy");
+            var slots = _service.GetAllSlots(venueId,d);
+            if(slots == null)
+            {
+                return BadRequest();
+            }
+            return Ok(slots);
         }
 
         // GET api/<SlotController>/5

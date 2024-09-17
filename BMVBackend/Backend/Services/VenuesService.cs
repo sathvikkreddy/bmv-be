@@ -1,5 +1,7 @@
 ﻿using Backend.DTO.Venue;
 using Backend.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Services
 {
@@ -9,6 +11,16 @@ namespace Backend.Services
         public List<Venue> GetAllVenues()
         {
             return _bmvContext.Venues.ToList();
+        }
+        public List<Venue> GetTopRatedVenues()
+        {
+            var topRatedVenues = _bmvContext.Venues.OrderByDescending(v => v.Rating).Take(5).ToList();
+            return topRatedVenues;
+        }
+        public List<Venue> GetTopBookedVenues()
+        {
+            var topBookedVenues = _bmvContext.Venues.Include(v => v.Bookings).OrderByDescending(v => v.Bookings.Count).Take(5).ToList();
+            return topBookedVenues;
         }
         public Venue GetVenueById(int id)
         {
@@ -30,8 +42,8 @@ namespace Backend.Services
             while (currentTime.AddMinutes(venueWithSlotDetails.slotDetails.DurationInMinutes - 1) <= closingTime)
             {
                 TimeOnly endTime = currentTime.AddMinutes(venueWithSlotDetails.slotDetails.DurationInMinutes - 1);
-                var newSlot = new SlotDetails(currentTime, endTime);
-                Console.WriteLine(currentTime.ToString() + newSlot.Start.ToString());
+                var newSlot = new SlotDetails() { Start=currentTime, End=endTime, WeekdayPrice=venueWithSlotDetails.slotDetails.WeekdayPrice, WeekendPrice=venueWithSlotDetails.slotDetails.WeekendPrice};
+                
                 slots.Add(newSlot);
                 currentTime = endTime.AddMinutes(1);
             }
@@ -39,7 +51,7 @@ namespace Backend.Services
             Venue v = new Venue();
 
             v.Name = venueWithSlotDetails.Name;
-            v.Description  = venueWithSlotDetails.Description;
+            v.Description = venueWithSlotDetails.Description;
             v.Address = venueWithSlotDetails.Address;
             v.City = venueWithSlotDetails.City;
             v.Latitude = venueWithSlotDetails.Latitude;
@@ -48,16 +60,15 @@ namespace Backend.Services
             v.Image1 = "";
             v.Image2 = "";
             v.Image3 = "";
-            _bmvContext.Categories.Add(new Category() { Name=venueWithSlotDetails.Category});
+            _bmvContext.Categories.Add(new Category() { Name = venueWithSlotDetails.Category });
             _bmvContext.SaveChanges();
             Category c = _bmvContext.Categories.Where(c => c.Name == venueWithSlotDetails.Category).FirstOrDefault();
             v.CategoryId = c.Id;
             _bmvContext.Venues.Add(v);
             _bmvContext.SaveChanges();
-            int vId = _bmvContext.Venues.Where(v=>v.Name==venueWithSlotDetails.Name).FirstOrDefault().Id;
-            foreach(var slot in slots)
+            foreach (var slot in slots)
             {
-                _bmvContext.Slots.Add(new Slot() { Start=slot.Start, End=slot.End, VenueId=vId});
+                _bmvContext.Slots.Add(new Slot() { Start = slot.Start, End = slot.End, VenueId = v.Id, WeekdayPrice=slot.WeekdayPrice, WeekendPrice=slot.WeekendPrice });
             }
             _bmvContext.SaveChanges();
             return v;
@@ -71,11 +82,13 @@ namespace Backend.Services
                 uv.Address = v.Address == null ? uv.Address : v.Address;
                 uv.Description = v.Description == null ? uv.Address : v.Description;
                 uv.Name = v.Name == null ? uv.Name : v.Name;
-                var b = v.Rating == null;
-                if (!b)
-                {
-                    uv.Rating = uv.Rating;
-                }
+                Console.WriteLine("hi" + v.Rating.ToString());
+                uv.Rating = v.Rating == null ? uv.Rating : (float)v.Rating;
+                uv.Latitude = v.Latitude == null ? uv.Latitude : (float)uv.Latitude;
+                uv.Longitude = v.Longitude == null ? uv.Longitude : (float)uv.Longitude;
+                uv.Image1 = v.Image1 == null ? uv.Image1 : v.Image1;
+                uv.Image2 = v.Image2 == null ? uv.Image2 : v.Image2;
+                uv.Image3 = v.Image3 == null ? uv.Image3 : v.Image3;
                 _bmvContext.SaveChanges();
                 return uv;
             }
@@ -100,10 +113,7 @@ namespace Backend.Services
     {
         public TimeOnly Start {  get; set; }
         public TimeOnly End { get; set; }
-        public SlotDetails(TimeOnly start, TimeOnly end)
-        {
-            Start = start;
-            End = end;
-        }
+        public double WeekdayPrice { get; set; }
+        public double WeekendPrice { get; set; }
     }
 }

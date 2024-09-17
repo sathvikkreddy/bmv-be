@@ -19,8 +19,21 @@ namespace Backend.Controllers
 
         // GET: api/<VenueController>
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult Get([FromQuery] bool? topRated, [FromQuery] bool? topBooked)
         {
+            var res = new GetVenuesDTO();
+            if (topRated!= null && topRated == true)
+            {
+                res.TopRatedVenues = _service.GetTopRatedVenues();
+            }
+            if(topBooked != null && topBooked == true)
+            {
+                res.TopBookedVenues = _service.GetTopBookedVenues();
+            }
+            if((topRated != null && topRated == true) || (topBooked != null && topBooked == true))
+            {
+                return Ok(res);
+            }
             var v = _service.GetAllVenues();
             if (v == null) {
                 return BadRequest();

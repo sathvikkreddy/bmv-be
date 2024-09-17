@@ -3,7 +3,7 @@
     public class Provider
     {
         public int Id { get; set; }
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow.AddHours(5).AddMinutes(30);
+        public DateTime CreatedAt { get; set; } = DateTime.Now;
         public string Name { get; set; }
         public string Email { get; set; }
         public string Mobile { get; set; }

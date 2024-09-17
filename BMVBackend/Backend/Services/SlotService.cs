@@ -19,14 +19,17 @@ namespace Backend.Services
             foreach (var slot in allSlots)
             {
                 GetSlotDTO newSlot = new GetSlotDTO();
+                newSlot.Id = slot.Id;
                 newSlot.Start = slot.Start;
                 newSlot.End = slot.End;
                 newSlot.WeekendPrice = slot.WeekendPrice;
                 newSlot.WeekdayPrice = slot.WeekdayPrice;
+                newSlot.Status = "available";
                 if (slot.IsBlocked)
                 {
                     newSlot.Status = "blocked";
-                    break;
+                    availableSlots.Add(newSlot);
+                    continue;
                 }
                 foreach (var bs in bookedSlots)
                 {
@@ -34,10 +37,6 @@ namespace Backend.Services
                     if(bs.SlotId == slot.Id)
                     {
                         newSlot.Status = "booked";
-                    }
-                    else
-                    {
-                        newSlot.Status = "available";
                     }
                 }
                 availableSlots.Add(newSlot);
@@ -68,7 +67,6 @@ namespace Backend.Services
             {
                 return null;
             }
-            Console.WriteLine(s.WeekdayPrice);
             us.WeekendPrice = s.WeekendPrice == null? us.WeekendPrice : (double)s.WeekendPrice;
             us.WeekdayPrice = s.WeekdayPrice == null ? us.WeekdayPrice : (double)s.WeekdayPrice;
             us.IsBlocked = s.IsBlocked == null ? us.IsBlocked : (bool)s.IsBlocked;

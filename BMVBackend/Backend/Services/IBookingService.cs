@@ -1,13 +1,16 @@
 ﻿using Backend.DTO;
+using Backend.DTO.Booking;
 using Backend.Models;
 
 namespace Backend.Services
 {
     public interface IBookingService
     {
-        bool AddBooking(BookingDTO value);
+        Booking AddBooking(BookingDTO value);
         bool DeleteBooking(int id);
         List<Booking> GetAllBookings();
+        List<GetBookingDTO> GetAllBookingsByCustomerId(int id);
+        List<GetBookingDTO> GetAllBookingsByProviderId(int id);
         Booking GetBookingById(int id);
         bool UpdateBooking(int id, Booking b);
     }

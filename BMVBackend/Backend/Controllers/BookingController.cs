@@ -18,9 +18,10 @@ namespace Backend.Controllers
         }
         // GET: api/<BookingController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            var x = _service.GetAllBookingsByCustomerId(1);
+            return Ok(x);
         }
 
         // GET api/<BookingController>/5
@@ -34,10 +35,10 @@ namespace Backend.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] BookingDTO value)
         {
-
-            if (_service.AddBooking(value))
+            var b = _service.AddBooking(value);
+            if (b != null)
             {
-                return Ok();
+                return Ok(b);
             }
             return BadRequest();
 
