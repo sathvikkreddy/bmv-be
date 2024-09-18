@@ -1,9 +1,10 @@
-﻿using Backend.Models;
+﻿using Backend.DTO.Customer;
+using Backend.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Services
 {
-    public class CustomersService :  ICustomersService
+    public class CustomersService : ICustomersService
     {
         private readonly BmvContext _bmvContext = new BmvContext();
         public List<Customer> GetAllCustomers()
@@ -73,5 +74,35 @@ namespace Backend.Services
             }
             return false;
         }
+        public Customer ValidateCustomer(CustomerLoginDTO customer)
+        {
+            if (customer == null)
+            {
+                return null;
+            }
+            var result = _bmvContext.Customers
+        .FirstOrDefault(u => u.Email == customer.Email && u.Password == customer.Password);
+
+            return result;
+        }
+        public Customer RegisterCustomer(CustomerRegisterDTO customer)
+        {
+            if (customer == null)
+            {
+                return null;
+            }
+            Customer c = new Customer() { Mobile = customer.Mobile, Email = customer.Email, Name = customer.Name, Password = customer.Password };
+            _bmvContext.Customers.Add(c);
+            try
+            {
+                _bmvContext.SaveChanges();
+            }
+            catch
+            {
+                return null;
+            }
+            return c;
+        }
+
     }
 }

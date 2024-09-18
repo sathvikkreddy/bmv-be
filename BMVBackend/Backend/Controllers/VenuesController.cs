@@ -1,6 +1,7 @@
 ﻿using Backend.DTO.Slot;
 using Backend.DTO.Venue;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -57,16 +58,32 @@ namespace Backend.Controllers
 
         // POST api/<VenueController>
         [HttpPost]
+        [Authorize]
         public IActionResult Post([FromBody] PostVenueDTO venueWithSlotDetails)
         {
-            var v = _service.AddVenue(venueWithSlotDetails);
+            var providerId = User.Claims.FirstOrDefault(c => c.Type == "ProviderId")?.Value;
+            if(providerId == null)
+            {
+                return BadRequest();
+            }
+            var v = _service.AddVenue(Convert.ToInt32(providerId),venueWithSlotDetails);
             return Ok(v);
         }
 
         // PUT api/<VenueController>/5
         [HttpPut("{id}")]
+        [Authorize]
         public IActionResult Put(int id, [FromBody] PutVenueDTO v)
         {
+            var providerId = User.Claims.FirstOrDefault(c => c.Type == "ProviderId")?.Value;
+            if (providerId == null)
+            {
+                return BadRequest();
+            }
+            var cv = _service.GetVenueById(id);
+            if (cv == null || cv.ProviderId != Convert.ToUInt32(providerId)) { 
+                return BadRequest();
+            }
             var uv = _service.UpdateVenue(id, v);
             if (uv != null)
             {

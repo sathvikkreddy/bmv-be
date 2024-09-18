@@ -1,6 +1,8 @@
 ﻿using Backend.DTO;
+using Backend.DTO.Booking;
 using Backend.Models;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -18,10 +20,21 @@ namespace Backend.Controllers
         }
         // GET: api/<BookingController>
         [HttpGet]
+        [Authorize]
         public IActionResult Get()
         {
-            var x = _service.GetAllBookingsByCustomerId(1);
-            return Ok(x);
+            var customerId = User.Claims.FirstOrDefault(c => c.Type == "CustomerId")?.Value;
+            var providerId = User.Claims.FirstOrDefault(c => c.Type == "ProviderId")?.Value;
+            List<GetBookingDTO> bookings;
+            if(customerId != null)
+            {
+                bookings = _service.GetAllBookingsByCustomerId(Convert.ToInt32(customerId));
+            }
+            else
+            {
+                bookings = _service.GetAllBookingsByProviderId(Convert.ToInt32(providerId));
+            }
+            return Ok(bookings);
         }
 
         // GET api/<BookingController>/5

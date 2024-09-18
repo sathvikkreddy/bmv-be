@@ -1,6 +1,8 @@
 ﻿using Backend.DTO.Customer;
+using Backend.Helpers;
 using Backend.Models;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -18,14 +20,17 @@ namespace Backend.Controllers
         }
         // GET: api/<UserController>
         [HttpGet]
+        [Authorize]
         public IActionResult Get()
         {
-            var providers = _service.GetAllCustomers();
-            if (providers == null)
+            var customerId = User.Claims.FirstOrDefault(c => c.Type == "CustomerId")?.Value;
+            var customer = _service.GetCustomerById(Convert.ToInt32(customerId));
+            if (customer == null)
             {
                 return BadRequest();
             }
-            return Ok(providers);
+            return Ok(new { Id = customer.Id, Name = customer.Name, Mobile = customer.Mobile, Email=customer.Email });
+
         }
 
         // GET api/<UserController>/5
@@ -73,6 +78,42 @@ namespace Backend.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+        [HttpPost]
+        [Route("login")]
+        public IActionResult Validate(CustomerLoginDTO value)
+        {
+            if (value == null)
+            {
+                return BadRequest();
+            }
+            var cus = _service.ValidateCustomer(value);
+            if (cus!=null)
+            {
+
+                return Ok(new TokenResult()
+                {
+                    Status = "success",
+                    Token = new TokenHelper().GenerateCustomerToken(cus)
+                });
+            }
+            return NotFound(new TokenResult() { Status = "failed", Token = null });
+        }
+
+        [HttpPost]
+        [Route("register")]
+        public IActionResult Register(CustomerRegisterDTO value)
+        {
+            var c =_service.RegisterCustomer(value);
+            if (c != null)
+            {
+                return Ok(new TokenResult()
+                {
+                    Status = "success",
+                    Token = new TokenHelper().GenerateCustomerToken(c)
+                });
+            }
+            return BadRequest(new TokenResult() { Status = "failed", Token = null });
         }
     }
 }

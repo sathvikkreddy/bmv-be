@@ -5,7 +5,7 @@ namespace Backend.Services
 {
     public interface IVenuesService
     {
-        Venue AddVenue(PostVenueDTO venueWithSlotDetails);
+        Venue AddVenue(int id, PostVenueDTO venueWithSlotDetails);
         bool DeleteVenue(int id);
         List<Venue> GetAllVenues();
         List<Venue> GetTopBookedVenues();

@@ -1,10 +1,11 @@
 ﻿using Backend.DTO;
+using Backend.DTO.Provider;
 using Backend.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Services
 {
-    public class ProvidersService : IProviderService
+    public class ProvidersService : IProvidersService
     {
         private readonly BmvContext _bmvContext = new BmvContext();
         public List<Provider> GetAllProviders()
@@ -14,7 +15,7 @@ namespace Backend.Services
                 return _bmvContext.Providers.Include("Bookings").Include("Venues")
                     .ToList();
             }
-            catch 
+            catch
             {
                 return null;
             }
@@ -23,7 +24,7 @@ namespace Backend.Services
         {
             try
             {
-                return _bmvContext.Providers.Include("Bookings").Include("Venues").Where(p=>p.Id==id).ToList().FirstOrDefault();
+                return _bmvContext.Providers.Include("Bookings").Include("Venues").Where(p => p.Id == id).ToList().FirstOrDefault();
             }
             catch
             {
@@ -35,7 +36,7 @@ namespace Backend.Services
             try
             {
                 _bmvContext.Providers.Add(p);
-                int x  = _bmvContext.SaveChanges();
+                int x = _bmvContext.SaveChanges();
                 return true;
             }
             catch
@@ -49,15 +50,16 @@ namespace Backend.Services
             try
             {
                 cProvider = _bmvContext.Providers.Find(id);
-                if (cProvider == null) { 
-                    return null ;
+                if (cProvider == null)
+                {
+                    return null;
                 }
             }
-            catch 
+            catch
             {
                 return null;
             }
-            cProvider.Email = p.Email==null? cProvider.Email : p.Email;
+            cProvider.Email = p.Email == null ? cProvider.Email : p.Email;
             cProvider.Mobile = p.Mobile == null ? cProvider.Mobile : p.Mobile;
             cProvider.Password = p.Password == null ? cProvider.Password : p.Password;
             cProvider.Name = p.Name == null ? cProvider.Name : p.Name;
@@ -84,6 +86,35 @@ namespace Backend.Services
             {
                 return false;
             }
+        }
+        public Provider ValidateProvider(ProviderLoginDTO provider)
+        {
+            if (provider == null)
+            {
+                return null;
+            }
+            var result = _bmvContext.Providers
+        .FirstOrDefault(p => p.Email == provider.Email && p.Password == provider.Password);
+
+            return result;
+        }
+        public Provider RegisterProvider(ProviderRegisterDTO provider)
+        {
+            if (provider == null)
+            {
+                return null;
+            }
+            Provider p = new Provider() { Mobile = provider.Mobile, Email = provider.Email, Name = provider.Name, Password = provider.Password };
+            _bmvContext.Providers.Add(p);
+            try
+            {
+                _bmvContext.SaveChanges();
+            }
+            catch
+            {
+                return null;
+            }
+            return p;
         }
     }
 }

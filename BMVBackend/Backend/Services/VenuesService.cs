@@ -26,7 +26,7 @@ namespace Backend.Services
         {
             return _bmvContext.Venues.Find(id);
         }
-        public Venue AddVenue(PostVenueDTO venueWithSlotDetails)
+        public Venue AddVenue(int id, PostVenueDTO venueWithSlotDetails)
         {
             if (venueWithSlotDetails.slotDetails.DurationInMinutes < 15)
             {
@@ -42,8 +42,8 @@ namespace Backend.Services
             while (currentTime.AddMinutes(venueWithSlotDetails.slotDetails.DurationInMinutes - 1) <= closingTime)
             {
                 TimeOnly endTime = currentTime.AddMinutes(venueWithSlotDetails.slotDetails.DurationInMinutes - 1);
-                var newSlot = new SlotDetails() { Start=currentTime, End=endTime, WeekdayPrice=venueWithSlotDetails.slotDetails.WeekdayPrice, WeekendPrice=venueWithSlotDetails.slotDetails.WeekendPrice};
-                
+                var newSlot = new SlotDetails() { Start = currentTime, End = endTime, WeekdayPrice = venueWithSlotDetails.slotDetails.WeekdayPrice, WeekendPrice = venueWithSlotDetails.slotDetails.WeekendPrice };
+
                 slots.Add(newSlot);
                 currentTime = endTime.AddMinutes(1);
             }
@@ -60,17 +60,43 @@ namespace Backend.Services
             v.Image1 = "";
             v.Image2 = "";
             v.Image3 = "";
-            _bmvContext.Categories.Add(new Category() { Name = venueWithSlotDetails.Category });
-            _bmvContext.SaveChanges();
             Category c = _bmvContext.Categories.Where(c => c.Name == venueWithSlotDetails.Category).FirstOrDefault();
+            if (c == null)
+            {
+                c = new Category() { Name = venueWithSlotDetails.Category };
+                _bmvContext.Categories.Add(c);
+            }
+            //c = _bmvContext.Categories.Where(c => c.Name == venueWithSlotDetails.Category).FirstOrDefault();
+            try
+            {
+            _bmvContext.SaveChanges();
+            }
+            catch
+            {
+                return null;
+            }
             v.CategoryId = c.Id;
             _bmvContext.Venues.Add(v);
-            _bmvContext.SaveChanges();
+            try
+            {
+                _bmvContext.SaveChanges();
+            }
+            catch
+            {
+                return null;
+            }
             foreach (var slot in slots)
             {
-                _bmvContext.Slots.Add(new Slot() { Start = slot.Start, End = slot.End, VenueId = v.Id, WeekdayPrice=slot.WeekdayPrice, WeekendPrice=slot.WeekendPrice });
+                _bmvContext.Slots.Add(new Slot() { Start = slot.Start, End = slot.End, VenueId = v.Id, WeekdayPrice = slot.WeekdayPrice, WeekendPrice = slot.WeekendPrice });
             }
-            _bmvContext.SaveChanges();
+            try
+            {
+                _bmvContext.SaveChanges();
+            }
+            catch
+            {
+                return null;
+            }
             return v;
         }
         public Venue UpdateVenue(int id, PutVenueDTO v)

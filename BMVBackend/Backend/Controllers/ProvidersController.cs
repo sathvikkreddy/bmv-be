@@ -1,6 +1,8 @@
 ﻿using Backend.DTO.Provider;
+using Backend.Helpers;
 using Backend.Models;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -11,20 +13,26 @@ namespace Backend.Controllers
     [ApiController]
     public class ProvidersController : ControllerBase
     {
-        IProviderService _service;
-        public ProvidersController(IProviderService providerService) {
+        IProvidersService _service;
+        public ProvidersController(IProvidersService providerService) {
             _service = providerService;
         }
         // GET: api/<ProviderController>
         [HttpGet]
+        [Authorize]
         public IActionResult Get()
         {
-            var providers = _service.GetAllProviders();
-            if(providers == null)
+            var providerId = User.Claims.FirstOrDefault(c => c.Type == "ProviderId")?.Value;
+            if(providerId == null)
             {
                 return BadRequest();
             }
-            return Ok(providers);
+            var provider = _service.GetProviderById(Convert.ToInt32(providerId));
+            if(provider == null)
+            {
+                return BadRequest();
+            }
+            return Ok(provider);
         }
 
         // GET api/<ProviderController>/5
@@ -72,6 +80,46 @@ namespace Backend.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        [HttpPost]
+        [Route("register")]
+        public IActionResult Register(ProviderRegisterDTO value)
+        {
+            if (value == null)
+            {
+                return BadRequest();
+            }
+            var p = _service.RegisterProvider(value);
+            if (p!=null)
+            {
+                return Ok(new TokenResult()
+                {
+                    Status = "success",
+                    Token = new TokenHelper().GenerateProviderToken(p)
+                });
+            }
+            return NotFound(new TokenResult() { Status = "failed", Token = null });
+        }
+
+        [HttpPost]
+        [Route("login")]
+        public IActionResult Validate(ProviderLoginDTO value)
+        {
+            if (value == null)
+            {
+                return BadRequest();
+            }
+            var p = _service.ValidateProvider(value);
+            if (p != null)
+            {
+                return Ok(new TokenResult()
+                {
+                    Status = "success",
+                    Token = new TokenHelper().GenerateProviderToken(p)
+                });
+            }
+            return NotFound(new TokenResult() { Status = "failed", Token = null });
         }
     }
 }
