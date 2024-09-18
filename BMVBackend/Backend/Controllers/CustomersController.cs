@@ -62,11 +62,13 @@ namespace Backend.Controllers
         }
 
         // PUT api/<UserController>/5
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] PutCustomerDTO newUser)
+        [Authorize]
+        [HttpPut]
+        public IActionResult Put([FromBody] PutCustomerDTO newUser)
         {
+            var customerId = User.Claims.FirstOrDefault(c => c.Type == "CustomerId")?.Value;
             Customer user = new Customer() { Email = newUser.Email, Mobile = newUser.Mobile, Name = newUser.Name, Password = newUser.Password };
-            var updatedUser = _service.UpdateCustomer(id, user);
+            var updatedUser = _service.UpdateCustomer(Convert.ToInt32(customerId), user);
             if (updatedUser == null)
             {
                 return BadRequest();

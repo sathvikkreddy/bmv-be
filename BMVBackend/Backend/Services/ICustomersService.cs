@@ -10,7 +10,7 @@ namespace Backend.Services
         List<Customer> GetAllCustomers();
         Customer GetCustomerById(int id);
         Customer RegisterCustomer(CustomerRegisterDTO customer);
-        bool UpdateCustomer(int id, Customer u);
+        Customer UpdateCustomer(int id, Customer u);
         Customer ValidateCustomer(CustomerLoginDTO customer);
     }
 }

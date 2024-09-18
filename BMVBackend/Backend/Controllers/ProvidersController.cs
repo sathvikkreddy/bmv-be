@@ -63,11 +63,13 @@ namespace Backend.Controllers
         }
 
         // PUT api/<ProviderController>/5
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] PutProviderDTO newProvider)
+        [Authorize]
+        [HttpPut]
+        public IActionResult Put([FromBody] PutProviderDTO newProvider)
         {
+            var providerId = User.Claims.FirstOrDefault(c => c.Type == "ProviderId")?.Value;
             Provider provider = new Provider() { Email=newProvider.Email, Mobile= newProvider.Mobile, Name= newProvider.Name, Password= newProvider.Password};
-            var updatedProvider = _service.UpdateProvider(id, provider);
+            var updatedProvider = _service.UpdateProvider(Convert.ToInt32(providerId), provider);
             if (updatedProvider == null)
             {
                 return BadRequest();

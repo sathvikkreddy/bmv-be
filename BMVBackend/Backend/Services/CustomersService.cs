@@ -46,21 +46,33 @@ namespace Backend.Services
                 return false;
             }
         }
-        public bool UpdateCustomer(int id, Customer u)
+        public Customer UpdateCustomer(int id, Customer c)
         {
-            var uu = _bmvContext.Customers.Find(id);
-            if (uu != null)
+            Customer cCustomer;
+            try
             {
-                uu.Email = u.Email;
-                uu.Password = u.Password;
-                uu.CreatedAt = u.CreatedAt;
-                uu.Mobile = u.Mobile;
-                _bmvContext.SaveChanges();
-                return true;
+                cCustomer = _bmvContext.Customers.Find(id);
+                if (cCustomer == null)
+                {
+                    return null;
+                }
             }
-            else
+            catch
             {
-                return false;
+                return null;
+            }
+            cCustomer.Email = c.Email == null ? cCustomer.Email : c.Email;
+            cCustomer.Mobile = c.Mobile == null ? cCustomer.Mobile : c.Mobile;
+            cCustomer.Password = c.Password == null ? cCustomer.Password : c.Password;
+            cCustomer.Name = c.Name == null ? cCustomer.Name : c.Name;
+            try
+            {
+                _bmvContext.SaveChanges();
+                return cCustomer;
+            }
+            catch
+            {
+                return null;
             }
         }
         public bool DeleteCustomer(int id)
