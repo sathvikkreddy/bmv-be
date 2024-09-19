@@ -16,18 +16,21 @@ namespace Backend.Controllers
         ICustomersService _customerService;
         IVenuesService _venueService;
         IProvidersService _providerService;
-        public BookingController(IBookingService bookingService, ICustomersService customerService, IVenuesService venueService, IProvidersService providerService)
+        ILogger _logger;
+        public BookingController(IBookingService bookingService, ICustomersService customerService, IVenuesService venueService, IProvidersService providerService, ILogger<BookingController> logger)
         {
             _service = bookingService;
             _customerService = customerService;
             _venueService = venueService;
             _providerService = providerService;
+            _logger = logger;
         }
         // GET: api/<BookingController>
         [HttpGet]
         [Authorize]
         public IActionResult Get()
         {
+            _logger.LogInformation("Booking Log Information");
             var customerId = User.Claims.FirstOrDefault(c => c.Type == "CustomerId")?.Value;
             var providerId = User.Claims.FirstOrDefault(c => c.Type == "ProviderId")?.Value;
             List<GetBookingDTO> bookings;

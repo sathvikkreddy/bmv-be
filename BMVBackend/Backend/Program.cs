@@ -3,6 +3,7 @@ using Backend.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 
 namespace Backend
 {
@@ -13,12 +14,15 @@ namespace Backend
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
             builder.Services.AddControllers();
             builder.Services.AddCors();
             builder.Services.AddScoped<IProvidersService, ProvidersService>();
             builder.Services.AddScoped<ICustomersService, CustomersService>();
             builder.Services.AddScoped<IVenuesService, VenuesService>();
             builder.Services.AddScoped<IBookingService, BookingService>();
+            var logger = new LoggerConfiguration().WriteTo.File("C:\\Users\\pulkit\\Desktop\\work\\Project\\backend\\BMVBackend\\Backend\\Logs\\Bookings.txt", rollingInterval: RollingInterval.Day).CreateLogger();
+            builder.Services.AddSerilog(logger);
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
