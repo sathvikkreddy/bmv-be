@@ -60,30 +60,62 @@ namespace Backend.Services
         {
             return _bmvContext.Bookings.Find(id);
         }
-        public Booking AddBooking(BookingDTO value)
+        public Booking AddBooking(int customerId, BookingDTO value)
         {
             if (value.SlotIds.Length < 1)
             {
+                Console.WriteLine("slots len<1");
                 return null;
             }
-            var vId = _bmvContext.Slots.Find(value.SlotIds[0]).VenueId;
-            var pId = _bmvContext.Venues.Find(vId).ProviderId;
+            var slot1 = _bmvContext.Slots.Find(value.SlotIds[0]);
+            if (slot1 == null)
+            {
+                Console.WriteLine("slot1 is null");
+                return null;
+            }
+            var vId = slot1.VenueId;
+            var venue = _bmvContext.Venues.Find(vId);
+            if(venue == null)
+            {
+                Console.WriteLine("provider is null");
+                return null;
+            }
             Booking b = new Booking();
-            b.CustomerId = value.CustomerId;
+            b.CustomerId = customerId;
             b.VenueId = vId;
-            b.ProviderId = pId;
+            b.ProviderId = venue.ProviderId;
+            var today = DateTime.Now;
             var bDate = DateOnly.ParseExact(value.Date, "dd-MM-yyyy");
+            if(bDate < DateOnly.FromDateTime(today))
+            {
+                Console.WriteLine("booking date < today");
+                return null;
+            }
             b.Date = bDate;
             _bmvContext.Bookings.Add(b);
             b.Start = TimeOnly.MaxValue;
             b.End = TimeOnly.MinValue;
-            _bmvContext.SaveChanges();
+            try
+            {
+                _bmvContext.SaveChanges();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                return null;
+            }
+            
             double price = 0;
             foreach (var s in value.SlotIds)
             {
                 var slot = _bmvContext.Slots.Find(s);
                 if (slot != null)
                 {
+                    if(bDate == DateOnly.FromDateTime(today) && slot.End < TimeOnly.FromDateTime(today))
+                    {
+                        Console.WriteLine("116");
+                        return null;
+                    }
                     _bmvContext.BookedSlots.Add(new BookedSlot() { VenueId = vId, BookingId = b.Id, Date = b.Date, SlotId = s });
                     if (slot.Start < b.Start)
                     {
@@ -93,22 +125,27 @@ namespace Backend.Services
                     {
                         b.End = slot.End;
                     }
-                    if((int)bDate.DayOfWeek==0 || (int)bDate.DayOfWeek == 6)
+                    if ((int)bDate.DayOfWeek == 0 || (int)bDate.DayOfWeek == 6)
                     {
-                        Console.WriteLine("hi" + slot.WeekendPrice);
                         price += slot.WeekendPrice;
                     }
                     else
                     {
-                        Console.WriteLine(slot.WeekdayPrice);
                         price += slot.WeekdayPrice;
                     }
                 }
             }
-            b.Amount = price +( price > 1000 ? 100 : 50);
-            Console.WriteLine(b.Amount);
-            _bmvContext.SaveChanges();
-
+            b.Amount = price + (price > 1000 ? 50 : 10);
+            try
+            {
+                _bmvContext.SaveChanges();
+            }
+            catch
+            {
+                Console.WriteLine("116");
+                return null;
+            }
+            Console.WriteLine("148");
             return b;
         }
         public bool UpdateBooking(int id, Booking b)

@@ -13,11 +13,20 @@ namespace Backend.Services
         }
         public List<GetSlotDTO> GetAllSlots(int venueId, DateOnly date)
         {
+            var today = DateTime.Now;
             List<GetSlotDTO> availableSlots = new List<GetSlotDTO>();
+            if (date<DateOnly.FromDateTime(today))
+            {
+                return availableSlots;
+            }
             var allSlots = _bmvContext.Slots.Where(s=>s.VenueId==venueId).ToList();
             var bookedSlots = _bmvContext.BookedSlots.Where(bs=>bs.Date==date).ToList();
             foreach (var slot in allSlots)
             {
+                if(date == DateOnly.FromDateTime(today) && slot.End < TimeOnly.FromDateTime(today))
+                {
+                    continue;
+                }
                 GetSlotDTO newSlot = new GetSlotDTO();
                 newSlot.Id = slot.Id;
                 newSlot.Start = slot.Start;
