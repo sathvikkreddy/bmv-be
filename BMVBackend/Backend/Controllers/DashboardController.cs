@@ -31,7 +31,19 @@ namespace Backend.Controllers
             var today = DateOnly.FromDateTime(DateTime.Now);
             Console.WriteLine(overallRating.ToString());
             Console.WriteLine(chartData);
-            return Ok(new {TotalEarnings= totalEarnings, TotalBookings=totalBookings, OverallRating=overallRating, CData=chartData, RecentBookings=recentBookings });
+
+            List<RecentBookingDTO> recents = new List<RecentBookingDTO>();
+            foreach (var item in recentBookings)
+            {
+                RecentBookingDTO r = new RecentBookingDTO();
+                r.Id = item.Id;
+                r.CreatedAt = item.CreatedAt;
+                r.Amount = item.Amount;
+                r.CustomerName = _bmvContext.Customers.Find(item.CustomerId).Name;
+                recents.Add(r);
+            }
+
+            return Ok(new {TotalEarnings= totalEarnings, TotalBookings=totalBookings, OverallRating=overallRating, CData=chartData, RecentBookings=recents });
         }
     }
     public class DashboardDTO
@@ -63,5 +75,14 @@ namespace Backend.Controllers
                 }
             }
         }
+    }
+
+    public class RecentBookingDTO()
+    {
+        public int Id { get; set; }
+        public string CustomerName { get; set; }
+        public DateTime CreatedAt { get; set; }
+
+        public double Amount { get; set; }
     }
 }
