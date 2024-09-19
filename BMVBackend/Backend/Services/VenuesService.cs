@@ -97,6 +97,11 @@ namespace Backend.Services
             {
                 return null;
             }
+            //try 
+            //{
+            //    HttpClient httpClient = new HttpClient();
+            //    httpClient.PostAsync("http://localhost:5143/api/Search", );
+            //} catch { }
             return v;
         }
         public Venue UpdateVenue(int id, PutVenueDTO v)

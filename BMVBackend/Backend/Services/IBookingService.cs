@@ -6,7 +6,7 @@ namespace Backend.Services
 {
     public interface IBookingService
     {
-        Booking AddBooking(BookingDTO value);
+        Booking AddBooking(int customerId, BookingDTO value);
         bool DeleteBooking(int id);
         List<Booking> GetAllBookings();
         List<GetBookingDTO> GetAllBookingsByCustomerId(int id);

@@ -1,4 +1,5 @@
 ﻿using Backend.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +11,15 @@ namespace Backend.Controllers
     {
         private readonly BmvContext _bmvContext = new BmvContext();
         [HttpGet]
+        [Authorize]
         public IActionResult Get()
         {
-            var bookings = _bmvContext.Bookings.Where(b=>b.ProviderId==1).ToList();
+            var providerId = User.Claims.FirstOrDefault(c => c.Type == "ProviderId")?.Value;
+            if (providerId == null)
+            {
+                return BadRequest();
+            }
+            var bookings = _bmvContext.Bookings.Where(b=>b.ProviderId== Convert.ToInt32(providerId)).ToList();
             var totalEarnings = bookings.Sum(b => b.Amount);
             var totalBookings = bookings.Count();
             var venues = _bmvContext.Venues.ToList();
@@ -21,7 +28,7 @@ namespace Backend.Controllers
             var recentBookings = bookings.OrderByDescending(b=>b.CreatedAt).Take(5);
             var chartData = new ChartData(bookings);
             var today = DateOnly.FromDateTime(DateTime.Now);
-            return Ok(new DashboardDTO() {TotalEarnings=totalEarnings, TotalBookings=totalBookings, OverallRating=overallRating, CData=chartData });
+            return Ok(new {TotalEarnings=totalEarnings, TotalBookings=totalBookings, OverallRating=overallRating, CData=chartData, RecentBookings=recentBookings });
         }
     }
     public class DashboardDTO

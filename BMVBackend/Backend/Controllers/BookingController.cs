@@ -46,14 +46,23 @@ namespace Backend.Controllers
 
         // POST api/<BookingController>
         [HttpPost]
+        [Authorize]
         public IActionResult Post([FromBody] BookingDTO value)
         {
-            var b = _service.AddBooking(value);
-            if (b != null)
+            var customerId = User.Claims.FirstOrDefault(c => c.Type == "CustomerId")?.Value;
+
+            if (customerId == null)
             {
-                return Ok(b);
+                Console.WriteLine("null customer");
+                return BadRequest();
             }
-            return BadRequest();
+
+            var b = _service.AddBooking(Convert.ToInt32(customerId), value);
+            if (b == null)
+            {
+                return BadRequest();
+            }
+            return Ok(b);
 
         }
 
