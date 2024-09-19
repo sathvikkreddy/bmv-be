@@ -1,6 +1,5 @@
 ﻿using Backend.DTO;
 using Backend.DTO.Booking;
-using Backend.Models;
 using Backend.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -14,9 +13,15 @@ namespace Backend.Controllers
     public class BookingController : ControllerBase
     {
         IBookingService _service;
-        public BookingController(IBookingService bookingService)
+        ICustomersService _customerService;
+        IVenuesService _venueService;
+        IProvidersService _providerService;
+        public BookingController(IBookingService bookingService, ICustomersService customerService, IVenuesService venueService, IProvidersService providerService)
         {
             _service = bookingService;
+            _customerService = customerService;
+            _venueService = venueService;
+            _providerService = providerService;
         }
         // GET: api/<BookingController>
         [HttpGet]
@@ -34,17 +39,29 @@ namespace Backend.Controllers
             {
                 bookings = _service.GetAllBookingsByProviderId(Convert.ToInt32(providerId));
             }
-            return Ok(bookings);
+
+            var detailedBookings = bookings.Select(b => new
+            {
+                b.Id,
+                b.CreatedAt,
+                b.Status,
+                b.CustomerId,
+                b.ProviderId,
+                b.VenueId,
+                b.Amount,
+                b.Date,
+                b.Start,
+                b.End,
+                b.BookedSlots,
+                CustomerName = _customerService.GetCustomerById(b.CustomerId)?.Name,
+                ProviderName = _providerService.GetProviderById(b.ProviderId)?.Name,
+                VenueName = _venueService.GetVenueById(b.VenueId)?.Name
+            }).ToList();
+
+            return Ok(detailedBookings);
         }
 
-        // GET api/<BookingController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/<BookingController>
+        
         [HttpPost]
         public IActionResult Post([FromBody] BookingDTO value)
         {
@@ -55,18 +72,6 @@ namespace Backend.Controllers
             }
             return BadRequest();
 
-        }
-
-        // PUT api/<BookingController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<BookingController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }
