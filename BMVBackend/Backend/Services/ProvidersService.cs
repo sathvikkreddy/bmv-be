@@ -22,14 +22,17 @@ namespace Backend.Services
         }
         public Provider GetProviderById(int id)
         {
-            try
+            var p = _bmvContext.Providers
+    .Include(p => p.Bookings)
+    .Include(p => p.Venues)
+        .ThenInclude(v => v.Slots)
+    .Where(p => p.Id == id)
+    .FirstOrDefault();
+            if (p == null)
             {
-                return _bmvContext.Providers.Include("Bookings").Include("Venues").Where(p => p.Id == id).ToList().FirstOrDefault();
+                Console.WriteLine("");
             }
-            catch
-            {
-                return null;
-            }
+            return p;
         }
         public bool AddProvider(Provider p)
         {

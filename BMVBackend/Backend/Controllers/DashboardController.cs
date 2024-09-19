@@ -14,6 +14,7 @@ namespace Backend.Controllers
         [Authorize]
         public IActionResult Get()
         {
+            Console.WriteLine("in dashboard");
             var providerId = User.Claims.FirstOrDefault(c => c.Type == "ProviderId")?.Value;
             if (providerId == null)
             {
@@ -24,11 +25,13 @@ namespace Backend.Controllers
             var totalBookings = bookings.Count();
             var venues = _bmvContext.Venues.ToList();
             var ratingSum = venues.Sum(v => v.Rating);
-            var overallRating = ratingSum/venues.Count();
+            var overallRating = ratingSum/(venues.Count() < 1 ? 1: venues.Count());
             var recentBookings = bookings.OrderByDescending(b=>b.CreatedAt).Take(5);
             var chartData = new ChartData(bookings);
             var today = DateOnly.FromDateTime(DateTime.Now);
-            return Ok(new {TotalEarnings=totalEarnings, TotalBookings=totalBookings, OverallRating=overallRating, CData=chartData, RecentBookings=recentBookings });
+            Console.WriteLine(overallRating.ToString());
+            Console.WriteLine(chartData);
+            return Ok(new {TotalEarnings= totalEarnings, TotalBookings=totalBookings, OverallRating=overallRating, CData=chartData, RecentBookings=recentBookings });
         }
     }
     public class DashboardDTO
