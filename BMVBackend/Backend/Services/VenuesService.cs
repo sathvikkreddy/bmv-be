@@ -17,7 +17,7 @@ namespace Backend.Services
         public List<Venue> GetTopRatedVenues()
         {
             var topRatedVenues = _bmvContext.Venues.OrderByDescending(v => v.Rating).Take(5).ToList();
-            Console.WriteLine(topRatedVenues[0].Images[0]);
+            
             return topRatedVenues;
         }
         public List<Venue> GetTopBookedVenues()

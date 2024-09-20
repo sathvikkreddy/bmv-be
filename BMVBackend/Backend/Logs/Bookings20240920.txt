@@ -2490,3 +2490,551 @@ DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
 2024-09-20 05:09:36.400 +00:00 [INF] Executed action Backend.Controllers.SlotController.Get (Backend) in 10.1085ms
 2024-09-20 05:09:36.400 +00:00 [INF] Executed endpoint 'Backend.Controllers.SlotController.Get (Backend)'
 2024-09-20 05:09:36.400 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Slot?date=20-09-2024&venueId=1 - 200 null application/json; charset=utf-8 10.7139ms
+2024-09-20 05:12:57.433 +00:00 [INF] User profile is available. Using 'C:\Users\pulkit\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-20 05:12:57.607 +00:00 [INF] Now listening on: http://localhost:5059
+2024-09-20 05:12:57.655 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-20 05:12:57.716 +00:00 [INF] Hosting environment: Development
+2024-09-20 05:12:57.716 +00:00 [INF] Content root path: C:\Users\pulkit\Desktop\work\Project\backend\BMVBackend\Backend
+2024-09-20 05:12:58.562 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/index.html - null null
+2024-09-20 05:12:58.778 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/index.html - 200 null text/html;charset=utf-8 222.7744ms
+2024-09-20 05:12:58.804 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-20 05:12:58.805 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/index.js - null null
+2024-09-20 05:12:58.808 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript; charset=utf-8 3.9291ms
+2024-09-20 05:12:58.809 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/index.js - 200 null application/javascript;charset=utf-8 4.2046ms
+2024-09-20 05:12:58.813 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/_vs/browserLink - null null
+2024-09-20 05:12:58.865 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.3937ms
+2024-09-20 05:12:58.924 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/v1/swagger.json - null null
+2024-09-20 05:12:59.064 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 139.8611ms
+2024-09-20 05:13:08.151 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - null null
+2024-09-20 05:13:08.187 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:13:08.259 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:13:08.278 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:13:31.063 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - null null
+2024-09-20 05:13:31.065 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:13:31.067 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:13:31.067 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:13:41.234 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.DTO.Venue.GetVenuesDTO'.
+2024-09-20 05:13:41.234 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.DTO.Venue.GetVenuesDTO'.
+2024-09-20 05:13:41.263 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 32980.4986ms
+2024-09-20 05:13:41.263 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 10191.8498ms
+2024-09-20 05:13:41.263 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:13:41.263 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:13:41.263 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - 200 null application/json; charset=utf-8 33112.1414ms
+2024-09-20 05:13:41.263 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - 200 null application/json; charset=utf-8 10199.9188ms
+2024-09-20 05:13:41.864 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/index.html - null null
+2024-09-20 05:13:41.874 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/index.html - 200 null text/html;charset=utf-8 12.9313ms
+2024-09-20 05:13:41.912 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-20 05:13:41.912 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript; charset=utf-8 0.5727ms
+2024-09-20 05:13:41.913 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/index.js - null null
+2024-09-20 05:13:41.914 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/index.js - 200 null application/javascript;charset=utf-8 1.4083ms
+2024-09-20 05:13:41.914 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/_vs/browserLink - null null
+2024-09-20 05:13:41.939 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.4002ms
+2024-09-20 05:13:42.011 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/swagger/v1/swagger.json - null null
+2024-09-20 05:13:42.045 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 33.7154ms
+2024-09-20 05:14:34.919 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/customers/register - null null
+2024-09-20 05:14:34.920 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:14:34.925 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/customers/register - 204 null null 6.0355ms
+2024-09-20 05:14:34.930 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5059/api/customers/register - application/json 92
+2024-09-20 05:14:34.932 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:14:34.933 +00:00 [INF] Executing endpoint 'Backend.Controllers.CustomersController.Register (Backend)'
+2024-09-20 05:14:34.935 +00:00 [INF] Route matched with {action = "Register", controller = "Customers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(Backend.DTO.Customer.CustomerRegisterDTO) on controller Backend.Controllers.CustomersController (Backend).
+2024-09-20 05:14:35.167 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Helpers.TokenResult'.
+2024-09-20 05:14:35.168 +00:00 [INF] Executed action Backend.Controllers.CustomersController.Register (Backend) in 232.2539ms
+2024-09-20 05:14:35.168 +00:00 [INF] Executed endpoint 'Backend.Controllers.CustomersController.Register (Backend)'
+2024-09-20 05:14:35.168 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5059/api/customers/register - 200 null application/json; charset=utf-8 237.515ms
+2024-09-20 05:14:35.189 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - null null
+2024-09-20 05:14:35.190 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:14:35.191 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:14:35.193 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:14:35.218 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.DTO.Venue.GetVenuesDTO'.
+2024-09-20 05:14:35.223 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 30.0188ms
+2024-09-20 05:14:35.223 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:14:35.223 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - 200 null application/json; charset=utf-8 34.0723ms
+2024-09-20 05:14:35.225 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - null null
+2024-09-20 05:14:35.225 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:14:35.226 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:14:35.226 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:14:35.230 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.DTO.Venue.GetVenuesDTO'.
+2024-09-20 05:14:35.230 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 4.5629ms
+2024-09-20 05:14:35.230 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:14:35.230 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - 200 null application/json; charset=utf-8 5.7233ms
+2024-09-20 05:14:49.998 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Customers - null null
+2024-09-20 05:14:49.999 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:14:49.999 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Customers - 204 null null 0.852ms
+2024-09-20 05:14:50.001 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Customers - null null
+2024-09-20 05:14:50.002 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:14:50.002 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Customers - 204 null null 0.6438ms
+2024-09-20 05:14:50.004 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Customers - null null
+2024-09-20 05:14:50.005 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:14:50.060 +00:00 [INF] Executing endpoint 'Backend.Controllers.CustomersController.Get (Backend)'
+2024-09-20 05:14:50.061 +00:00 [INF] Route matched with {action = "Get", controller = "Customers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.CustomersController (Backend).
+2024-09-20 05:14:50.077 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-20 05:14:50.080 +00:00 [INF] Executed action Backend.Controllers.CustomersController.Get (Backend) in 18.7398ms
+2024-09-20 05:14:50.080 +00:00 [INF] Executed endpoint 'Backend.Controllers.CustomersController.Get (Backend)'
+2024-09-20 05:14:50.080 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Customers - 200 null application/json; charset=utf-8 76.3188ms
+2024-09-20 05:14:50.081 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Customers - null null
+2024-09-20 05:14:50.081 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:14:50.083 +00:00 [INF] Executing endpoint 'Backend.Controllers.CustomersController.Get (Backend)'
+2024-09-20 05:14:50.083 +00:00 [INF] Route matched with {action = "Get", controller = "Customers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.CustomersController (Backend).
+2024-09-20 05:14:50.086 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`4[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-20 05:14:50.086 +00:00 [INF] Executed action Backend.Controllers.CustomersController.Get (Backend) in 2.9596ms
+2024-09-20 05:14:50.086 +00:00 [INF] Executed endpoint 'Backend.Controllers.CustomersController.Get (Backend)'
+2024-09-20 05:14:50.087 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Customers - 200 null application/json; charset=utf-8 5.3195ms
+2024-09-20 05:15:17.471 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/providers/register - null null
+2024-09-20 05:15:17.474 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:17.475 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/providers/register - 204 null null 3.8654ms
+2024-09-20 05:15:17.476 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5059/api/providers/register - application/json 92
+2024-09-20 05:15:17.477 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:17.478 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Register (Backend)'
+2024-09-20 05:15:17.480 +00:00 [INF] Route matched with {action = "Register", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(Backend.DTO.Provider.ProviderRegisterDTO) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:15:17.508 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Helpers.TokenResult'.
+2024-09-20 05:15:17.508 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Register (Backend) in 28.7487ms
+2024-09-20 05:15:17.508 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Register (Backend)'
+2024-09-20 05:15:17.509 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5059/api/providers/register - 200 null application/json; charset=utf-8 32.0558ms
+2024-09-20 05:15:17.529 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Providers - null null
+2024-09-20 05:15:17.529 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:17.530 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Providers - 204 null null 1.7464ms
+2024-09-20 05:15:17.532 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers - null null
+2024-09-20 05:15:17.532 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:17.540 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:15:17.541 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:15:17.594 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:15:17.597 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 56.4993ms
+2024-09-20 05:15:17.597 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:15:17.597 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers - 200 null application/json; charset=utf-8 65.3014ms
+2024-09-20 05:15:17.599 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers - null null
+2024-09-20 05:15:17.599 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:17.599 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:15:17.599 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:15:17.602 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:15:17.602 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 3.0577ms
+2024-09-20 05:15:17.603 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:15:17.603 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers - 200 null application/json; charset=utf-8 4.0297ms
+2024-09-20 05:15:17.604 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Dashboard - null null
+2024-09-20 05:15:17.604 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:17.604 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Dashboard - 204 null null 0.3294ms
+2024-09-20 05:15:17.605 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Dashboard - null null
+2024-09-20 05:15:17.605 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:17.605 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Dashboard - 204 null null 0.2768ms
+2024-09-20 05:15:17.606 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Dashboard - null null
+2024-09-20 05:15:17.607 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:17.607 +00:00 [INF] Executing endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:15:17.608 +00:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.DashboardController (Backend).
+2024-09-20 05:15:17.634 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`5[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Backend.Controllers.ChartData, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.List`1[[Backend.Controllers.RecentBookingDTO, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-20 05:15:17.642 +00:00 [INF] Executed action Backend.Controllers.DashboardController.Get (Backend) in 33.7925ms
+2024-09-20 05:15:17.642 +00:00 [INF] Executed endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:15:17.642 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Dashboard - 200 null application/json; charset=utf-8 35.3817ms
+2024-09-20 05:15:17.643 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Dashboard - null null
+2024-09-20 05:15:17.643 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:17.644 +00:00 [INF] Executing endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:15:17.644 +00:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.DashboardController (Backend).
+2024-09-20 05:15:17.648 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`5[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Backend.Controllers.ChartData, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.List`1[[Backend.Controllers.RecentBookingDTO, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-20 05:15:17.648 +00:00 [INF] Executed action Backend.Controllers.DashboardController.Get (Backend) in 4.1146ms
+2024-09-20 05:15:17.648 +00:00 [INF] Executed endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:15:17.648 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Dashboard - 200 null application/json; charset=utf-8 5.316ms
+2024-09-20 05:15:27.988 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Dashboard - null null
+2024-09-20 05:15:27.988 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Dashboard - null null
+2024-09-20 05:15:27.988 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:27.988 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:27.989 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Dashboard - 204 null null 0.4846ms
+2024-09-20 05:15:27.989 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Dashboard - 204 null null 0.4847ms
+2024-09-20 05:15:27.991 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Dashboard - null null
+2024-09-20 05:15:27.991 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:27.991 +00:00 [INF] Executing endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:15:27.992 +00:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.DashboardController (Backend).
+2024-09-20 05:15:27.994 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`5[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Backend.Controllers.ChartData, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.List`1[[Backend.Controllers.RecentBookingDTO, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-20 05:15:27.994 +00:00 [INF] Executed action Backend.Controllers.DashboardController.Get (Backend) in 2.8494ms
+2024-09-20 05:15:27.994 +00:00 [INF] Executed endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:15:27.994 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Dashboard - 200 null application/json; charset=utf-8 3.9764ms
+2024-09-20 05:15:27.998 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Dashboard - null null
+2024-09-20 05:15:27.998 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:15:27.999 +00:00 [INF] Executing endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:15:27.999 +00:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.DashboardController (Backend).
+2024-09-20 05:15:28.002 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`5[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Backend.Controllers.ChartData, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.List`1[[Backend.Controllers.RecentBookingDTO, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-20 05:15:28.003 +00:00 [INF] Executed action Backend.Controllers.DashboardController.Get (Backend) in 3.5219ms
+2024-09-20 05:15:28.003 +00:00 [INF] Executed endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:15:28.003 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Dashboard - 200 null application/json; charset=utf-8 5.1921ms
+2024-09-20 05:16:33.595 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Venues - null null
+2024-09-20 05:16:33.595 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:33.596 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Venues - 204 null null 0.5259ms
+2024-09-20 05:16:33.599 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5059/api/Venues - multipart/form-data; boundary=----WebKitFormBoundary95gK0AUTVKsrjqZg 3579661
+2024-09-20 05:16:33.600 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:33.603 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Post (Backend)'
+2024-09-20 05:16:33.608 +00:00 [INF] Route matched with {action = "Post", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(Backend.DTO.Venue.PostVenueDTO) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:16:33.877 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Venue'.
+2024-09-20 05:16:33.883 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Post (Backend) in 275.0204ms
+2024-09-20 05:16:33.883 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Post (Backend)'
+2024-09-20 05:16:33.887 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5059/api/Venues - 200 null application/json; charset=utf-8 287.5841ms
+2024-09-20 05:16:33.932 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Providers - null null
+2024-09-20 05:16:33.932 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:33.932 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Providers - 204 null null 0.3521ms
+2024-09-20 05:16:33.933 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers - null null
+2024-09-20 05:16:33.934 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:33.934 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:33.934 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:16:33.952 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Dashboard - null null
+2024-09-20 05:16:33.952 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:33.952 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Dashboard - 204 null null 0.3455ms
+2024-09-20 05:16:33.953 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Dashboard - null null
+2024-09-20 05:16:33.953 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:33.954 +00:00 [INF] Executing endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:16:33.954 +00:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.DashboardController (Backend).
+2024-09-20 05:16:33.962 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`5[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Backend.Controllers.ChartData, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.List`1[[Backend.Controllers.RecentBookingDTO, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-20 05:16:33.962 +00:00 [INF] Executed action Backend.Controllers.DashboardController.Get (Backend) in 8.1954ms
+2024-09-20 05:16:33.962 +00:00 [INF] Executed endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:16:33.962 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Dashboard - 200 null application/json; charset=utf-8 9.1198ms
+2024-09-20 05:16:33.964 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Dashboard - null null
+2024-09-20 05:16:33.964 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:33.965 +00:00 [INF] Executing endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:16:33.965 +00:00 [INF] Route matched with {action = "Get", controller = "Dashboard"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.DashboardController (Backend).
+2024-09-20 05:16:33.967 +00:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType2`5[[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Single, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[Backend.Controllers.ChartData, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.List`1[[Backend.Controllers.RecentBookingDTO, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-20 05:16:33.968 +00:00 [INF] Executed action Backend.Controllers.DashboardController.Get (Backend) in 2.5223ms
+2024-09-20 05:16:33.968 +00:00 [INF] Executed endpoint 'Backend.Controllers.DashboardController.Get (Backend)'
+2024-09-20 05:16:33.968 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Dashboard - 200 null application/json; charset=utf-8 3.4266ms
+2024-09-20 05:16:33.982 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:16:33.982 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 48.1574ms
+2024-09-20 05:16:33.982 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:33.983 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers - 200 null application/json; charset=utf-8 49.2357ms
+2024-09-20 05:16:38.936 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/images/3256b7b7-4771-427a-becb-f9540e541629.jpg - null null
+2024-09-20 05:16:38.991 +00:00 [INF] Sending file. Request path: '/images/3256b7b7-4771-427a-becb-f9540e541629.jpg'. Physical path: 'C:\Users\pulkit\Desktop\work\Project\backend\BMVBackend\Backend\wwwroot\images\3256b7b7-4771-427a-becb-f9540e541629.jpg'
+2024-09-20 05:16:38.991 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/images/3256b7b7-4771-427a-becb-f9540e541629.jpg - 200 1605602 image/jpeg 55.2342ms
+2024-09-20 05:16:40.572 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Category/1 - null null
+2024-09-20 05:16:40.572 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:40.572 +00:00 [INF] Executing endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:16:40.574 +00:00 [INF] Route matched with {action = "Get", controller = "Category"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.CategoryController (Backend).
+2024-09-20 05:16:40.592 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Category'.
+2024-09-20 05:16:40.593 +00:00 [INF] Executed action Backend.Controllers.CategoryController.Get (Backend) in 19.2079ms
+2024-09-20 05:16:40.593 +00:00 [INF] Executed endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:16:40.593 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Category/1 - 200 null application/json; charset=utf-8 21.4994ms
+2024-09-20 05:16:40.595 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Category/1 - null null
+2024-09-20 05:16:40.595 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:40.595 +00:00 [INF] Executing endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:16:40.595 +00:00 [INF] Route matched with {action = "Get", controller = "Category"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.CategoryController (Backend).
+2024-09-20 05:16:40.598 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Category'.
+2024-09-20 05:16:40.598 +00:00 [INF] Executed action Backend.Controllers.CategoryController.Get (Backend) in 2.9709ms
+2024-09-20 05:16:40.598 +00:00 [INF] Executed endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:16:40.598 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Category/1 - 200 null application/json; charset=utf-8 3.7334ms
+2024-09-20 05:16:50.198 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - null null
+2024-09-20 05:16:50.198 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:50.199 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:50.199 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:16:50.209 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.DTO.Venue.GetVenuesDTO'.
+2024-09-20 05:16:50.210 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 10.5344ms
+2024-09-20 05:16:50.210 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:50.210 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - 200 null application/json; charset=utf-8 12.0438ms
+2024-09-20 05:16:50.211 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - null null
+2024-09-20 05:16:50.211 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:50.212 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:50.212 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:16:50.214 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:16:50.214 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:50.214 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:50.215 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:16:50.215 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.DTO.Venue.GetVenuesDTO'.
+2024-09-20 05:16:50.215 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 3.6935ms
+2024-09-20 05:16:50.215 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:50.216 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - 200 null application/json; charset=utf-8 4.1743ms
+2024-09-20 05:16:50.218 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:16:50.218 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 2.7292ms
+2024-09-20 05:16:50.218 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:50.218 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 4.2422ms
+2024-09-20 05:16:50.219 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:16:50.219 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:50.219 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:50.219 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:16:50.221 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:16:50.221 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 1.7413ms
+2024-09-20 05:16:50.221 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:50.221 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 2.0793ms
+2024-09-20 05:16:50.222 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:16:50.222 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:50.222 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:50.222 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:16:50.224 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:16:50.224 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 1.8158ms
+2024-09-20 05:16:50.224 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:50.224 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 2.2464ms
+2024-09-20 05:16:50.226 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:16:50.226 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:50.226 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:50.226 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:16:50.229 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:16:50.229 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 2.8057ms
+2024-09-20 05:16:50.229 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:50.229 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 3.3184ms
+2024-09-20 05:16:50.232 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/images/3256b7b7-4771-427a-becb-f9540e541629.jpg - null null
+2024-09-20 05:16:50.235 +00:00 [INF] The file /images/3256b7b7-4771-427a-becb-f9540e541629.jpg was not modified
+2024-09-20 05:16:50.235 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/images/3256b7b7-4771-427a-becb-f9540e541629.jpg - 304 null image/jpeg 2.6638ms
+2024-09-20 05:16:51.579 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues/1 - null null
+2024-09-20 05:16:51.579 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:51.580 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:51.581 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:16:51.582 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Slot?date=20-09-2024&venueId=1 - null null
+2024-09-20 05:16:51.582 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:51.582 +00:00 [INF] Executing endpoint 'Backend.Controllers.SlotController.Get (Backend)'
+2024-09-20 05:16:51.585 +00:00 [INF] Route matched with {action = "Get", controller = "Slot"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.String, Int32) on controller Backend.Controllers.SlotController (Backend).
+2024-09-20 05:16:51.594 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Venue'.
+2024-09-20 05:16:51.594 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 12.3395ms
+2024-09-20 05:16:51.594 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:51.594 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues/1 - 200 null application/json; charset=utf-8 14.7236ms
+2024-09-20 05:16:51.599 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues/1 - null null
+2024-09-20 05:16:51.599 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:51.599 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:51.599 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:16:51.602 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Venue'.
+2024-09-20 05:16:51.602 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 3.1233ms
+2024-09-20 05:16:51.602 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:51.602 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues/1 - 200 null application/json; charset=utf-8 3.8781ms
+2024-09-20 05:16:51.609 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/images/66590287-ddbb-447a-9bab-e3a92ce34bcc.jpg - null null
+2024-09-20 05:16:51.611 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:16:51.612 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:51.612 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:51.613 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:16:51.618 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:16:51.618 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 5.2736ms
+2024-09-20 05:16:51.618 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:51.618 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 7.139ms
+2024-09-20 05:16:51.625 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Backend.DTO.GetSlotDTO, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-20 05:16:51.625 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Category/1 - null null
+2024-09-20 05:16:51.625 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:51.625 +00:00 [INF] Executing endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:16:51.621 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:16:51.626 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:51.626 +00:00 [INF] Route matched with {action = "Get", controller = "Category"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.CategoryController (Backend).
+2024-09-20 05:16:51.626 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:51.626 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:16:51.628 +00:00 [INF] Executed action Backend.Controllers.SlotController.Get (Backend) in 42.4532ms
+2024-09-20 05:16:51.628 +00:00 [INF] Executed endpoint 'Backend.Controllers.SlotController.Get (Backend)'
+2024-09-20 05:16:51.628 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Slot?date=20-09-2024&venueId=1 - 200 null application/json; charset=utf-8 45.9282ms
+2024-09-20 05:16:51.628 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Category'.
+2024-09-20 05:16:51.628 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:16:51.628 +00:00 [INF] Executed action Backend.Controllers.CategoryController.Get (Backend) in 2.6239ms
+2024-09-20 05:16:51.628 +00:00 [INF] Executed endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:16:51.628 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Category/1 - 200 null application/json; charset=utf-8 3.2877ms
+2024-09-20 05:16:51.628 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 2.5958ms
+2024-09-20 05:16:51.628 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:51.628 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 7.897ms
+2024-09-20 05:16:51.632 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Slot?date=20-09-2024&venueId=1 - null null
+2024-09-20 05:16:51.632 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:51.632 +00:00 [INF] Executing endpoint 'Backend.Controllers.SlotController.Get (Backend)'
+2024-09-20 05:16:51.632 +00:00 [INF] Route matched with {action = "Get", controller = "Slot"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.String, Int32) on controller Backend.Controllers.SlotController (Backend).
+2024-09-20 05:16:51.641 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Backend.DTO.GetSlotDTO, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-20 05:16:51.641 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Category/1 - null null
+2024-09-20 05:16:51.642 +00:00 [INF] Executed action Backend.Controllers.SlotController.Get (Backend) in 9.5013ms
+2024-09-20 05:16:51.642 +00:00 [INF] Executed endpoint 'Backend.Controllers.SlotController.Get (Backend)'
+2024-09-20 05:16:51.642 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Slot?date=20-09-2024&venueId=1 - 200 null application/json; charset=utf-8 10.2433ms
+2024-09-20 05:16:51.643 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:51.643 +00:00 [INF] Executing endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:16:51.643 +00:00 [INF] Route matched with {action = "Get", controller = "Category"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.CategoryController (Backend).
+2024-09-20 05:16:51.646 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Category'.
+2024-09-20 05:16:51.646 +00:00 [INF] Executed action Backend.Controllers.CategoryController.Get (Backend) in 2.7455ms
+2024-09-20 05:16:51.646 +00:00 [INF] Executed endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:16:51.646 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Category/1 - 200 null application/json; charset=utf-8 5.4591ms
+2024-09-20 05:16:51.648 +00:00 [INF] Sending file. Request path: '/images/66590287-ddbb-447a-9bab-e3a92ce34bcc.jpg'. Physical path: 'C:\Users\pulkit\Desktop\work\Project\backend\BMVBackend\Backend\wwwroot\images\66590287-ddbb-447a-9bab-e3a92ce34bcc.jpg'
+2024-09-20 05:16:51.648 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/images/66590287-ddbb-447a-9bab-e3a92ce34bcc.jpg - 200 1972360 image/jpeg 38.6772ms
+2024-09-20 05:16:56.470 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - null null
+2024-09-20 05:16:56.472 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:56.477 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:56.478 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:16:56.483 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.DTO.Venue.GetVenuesDTO'.
+2024-09-20 05:16:56.483 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 5.2568ms
+2024-09-20 05:16:56.483 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:56.483 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - 200 null application/json; charset=utf-8 13.0685ms
+2024-09-20 05:16:56.489 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - null null
+2024-09-20 05:16:56.489 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:56.489 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:56.489 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:16:56.491 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:16:56.491 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:56.491 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:56.491 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:16:56.494 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:16:56.494 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 2.794ms
+2024-09-20 05:16:56.494 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:56.494 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 3.3589ms
+2024-09-20 05:16:56.495 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.DTO.Venue.GetVenuesDTO'.
+2024-09-20 05:16:56.495 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 5.5335ms
+2024-09-20 05:16:56.495 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:16:56.495 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - 200 null application/json; charset=utf-8 6.0117ms
+2024-09-20 05:16:56.498 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:16:56.498 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:56.498 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:56.498 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:16:56.500 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:16:56.501 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 2.1164ms
+2024-09-20 05:16:56.501 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:56.501 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 2.7197ms
+2024-09-20 05:16:56.501 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:16:56.501 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:56.502 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:56.502 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:16:56.503 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:16:56.503 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 1.6769ms
+2024-09-20 05:16:56.503 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:56.503 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 2.0093ms
+2024-09-20 05:16:56.505 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:16:56.505 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:16:56.505 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:56.505 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:16:56.506 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:16:56.506 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 1.7037ms
+2024-09-20 05:16:56.506 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:16:56.507 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 2.017ms
+2024-09-20 05:17:13.537 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/customers/login - null null
+2024-09-20 05:17:13.537 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:13.537 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/customers/login - 204 null null 0.4492ms
+2024-09-20 05:17:13.539 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5059/api/customers/login - application/json 47
+2024-09-20 05:17:13.539 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:13.539 +00:00 [INF] Executing endpoint 'Backend.Controllers.CustomersController.Validate (Backend)'
+2024-09-20 05:17:13.541 +00:00 [INF] Route matched with {action = "Validate", controller = "Customers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Validate(Backend.DTO.Customer.CustomerLoginDTO) on controller Backend.Controllers.CustomersController (Backend).
+2024-09-20 05:17:13.555 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Helpers.TokenResult'.
+2024-09-20 05:17:13.555 +00:00 [INF] Executed action Backend.Controllers.CustomersController.Validate (Backend) in 13.924ms
+2024-09-20 05:17:13.555 +00:00 [INF] Executed endpoint 'Backend.Controllers.CustomersController.Validate (Backend)'
+2024-09-20 05:17:13.555 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5059/api/customers/login - 200 null application/json; charset=utf-8 16.4011ms
+2024-09-20 05:17:13.566 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - null null
+2024-09-20 05:17:13.566 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:13.567 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:17:13.568 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:17:13.577 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.DTO.Venue.GetVenuesDTO'.
+2024-09-20 05:17:13.577 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 9.1904ms
+2024-09-20 05:17:13.577 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:17:13.577 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - 200 null application/json; charset=utf-8 11.7288ms
+2024-09-20 05:17:13.579 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - null null
+2024-09-20 05:17:13.579 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:13.579 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:17:13.580 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.Nullable`1[System.Boolean], System.Nullable`1[System.Boolean]) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:17:13.581 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:17:13.581 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:13.582 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:13.582 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:17:13.583 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.DTO.Venue.GetVenuesDTO'.
+2024-09-20 05:17:13.583 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 3.7499ms
+2024-09-20 05:17:13.583 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:17:13.583 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:17:13.583 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues?topRated=true&topbooked=true - 200 null application/json; charset=utf-8 4.3767ms
+2024-09-20 05:17:13.584 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 2.0107ms
+2024-09-20 05:17:13.584 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:13.584 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 2.4249ms
+2024-09-20 05:17:13.586 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:17:13.586 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:13.586 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:13.587 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:17:13.588 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:17:13.588 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 1.4768ms
+2024-09-20 05:17:13.588 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:13.588 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 2.1724ms
+2024-09-20 05:17:13.589 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:17:13.589 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:13.589 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:13.589 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:17:13.591 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:17:13.591 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 1.3699ms
+2024-09-20 05:17:13.591 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:13.591 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 1.8531ms
+2024-09-20 05:17:13.592 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:17:13.592 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:13.592 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:13.592 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:17:13.594 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:17:13.594 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 1.5295ms
+2024-09-20 05:17:13.594 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:13.594 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 1.9074ms
+2024-09-20 05:17:17.548 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues/1 - null null
+2024-09-20 05:17:17.548 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Slot?date=20-09-2024&venueId=1 - null null
+2024-09-20 05:17:17.548 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:17.548 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:17.549 +00:00 [INF] Executing endpoint 'Backend.Controllers.SlotController.Get (Backend)'
+2024-09-20 05:17:17.549 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:17:17.549 +00:00 [INF] Route matched with {action = "Get", controller = "Slot"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.String, Int32) on controller Backend.Controllers.SlotController (Backend).
+2024-09-20 05:17:17.549 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:17:17.552 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Backend.DTO.GetSlotDTO, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-20 05:17:17.552 +00:00 [INF] Executed action Backend.Controllers.SlotController.Get (Backend) in 3.391ms
+2024-09-20 05:17:17.552 +00:00 [INF] Executed endpoint 'Backend.Controllers.SlotController.Get (Backend)'
+2024-09-20 05:17:17.552 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Slot?date=20-09-2024&venueId=1 - 200 null application/json; charset=utf-8 4.1952ms
+2024-09-20 05:17:17.553 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Venue'.
+2024-09-20 05:17:17.553 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 4.0287ms
+2024-09-20 05:17:17.553 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:17:17.553 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues/1 - 200 null application/json; charset=utf-8 4.9188ms
+2024-09-20 05:17:17.554 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Slot?date=20-09-2024&venueId=1 - null null
+2024-09-20 05:17:17.554 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:17.556 +00:00 [INF] Executing endpoint 'Backend.Controllers.SlotController.Get (Backend)'
+2024-09-20 05:17:17.556 +00:00 [INF] Route matched with {action = "Get", controller = "Slot"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(System.String, Int32) on controller Backend.Controllers.SlotController (Backend).
+2024-09-20 05:17:17.556 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Venues/1 - null null
+2024-09-20 05:17:17.556 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:17.557 +00:00 [INF] Executing endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:17:17.557 +00:00 [INF] Route matched with {action = "Get", controller = "Venues"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.VenuesController (Backend).
+2024-09-20 05:17:17.559 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Backend.DTO.GetSlotDTO, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-20 05:17:17.559 +00:00 [INF] Executed action Backend.Controllers.SlotController.Get (Backend) in 3.3598ms
+2024-09-20 05:17:17.559 +00:00 [INF] Executed endpoint 'Backend.Controllers.SlotController.Get (Backend)'
+2024-09-20 05:17:17.560 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Slot?date=20-09-2024&venueId=1 - 200 null application/json; charset=utf-8 5.7122ms
+2024-09-20 05:17:17.560 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Venue'.
+2024-09-20 05:17:17.560 +00:00 [INF] Executed action Backend.Controllers.VenuesController.Get (Backend) in 3.3639ms
+2024-09-20 05:17:17.560 +00:00 [INF] Executed endpoint 'Backend.Controllers.VenuesController.Get (Backend)'
+2024-09-20 05:17:17.560 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Venues/1 - 200 null application/json; charset=utf-8 3.7237ms
+2024-09-20 05:17:17.563 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:17:17.563 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:17.563 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:17.563 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:17:17.564 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:17:17.565 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 1.6181ms
+2024-09-20 05:17:17.565 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:17.565 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 1.9201ms
+2024-09-20 05:17:17.566 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Providers/1 - null null
+2024-09-20 05:17:17.566 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:17.567 +00:00 [INF] Executing endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:17.567 +00:00 [INF] Route matched with {action = "Get", controller = "Providers"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.ProvidersController (Backend).
+2024-09-20 05:17:17.588 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Category/1 - null null
+2024-09-20 05:17:17.588 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:17.588 +00:00 [INF] Executing endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:17:17.589 +00:00 [INF] Route matched with {action = "Get", controller = "Category"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.CategoryController (Backend).
+2024-09-20 05:17:17.589 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Provider'.
+2024-09-20 05:17:17.589 +00:00 [INF] Executed action Backend.Controllers.ProvidersController.Get (Backend) in 22.4269ms
+2024-09-20 05:17:17.590 +00:00 [INF] Executed endpoint 'Backend.Controllers.ProvidersController.Get (Backend)'
+2024-09-20 05:17:17.590 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Providers/1 - 200 null application/json; charset=utf-8 23.6876ms
+2024-09-20 05:17:17.590 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Category'.
+2024-09-20 05:17:17.590 +00:00 [INF] Executed action Backend.Controllers.CategoryController.Get (Backend) in 1.4262ms
+2024-09-20 05:17:17.590 +00:00 [INF] Executed endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:17:17.590 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Category/1 - 200 null application/json; charset=utf-8 1.9055ms
+2024-09-20 05:17:17.596 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Category/1 - null null
+2024-09-20 05:17:17.596 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:17.596 +00:00 [INF] Executing endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:17:17.597 +00:00 [INF] Route matched with {action = "Get", controller = "Category"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get(Int32) on controller Backend.Controllers.CategoryController (Backend).
+2024-09-20 05:17:17.598 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Category'.
+2024-09-20 05:17:17.598 +00:00 [INF] Executed action Backend.Controllers.CategoryController.Get (Backend) in 1.5776ms
+2024-09-20 05:17:17.598 +00:00 [INF] Executed endpoint 'Backend.Controllers.CategoryController.Get (Backend)'
+2024-09-20 05:17:17.598 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Category/1 - 200 null application/json; charset=utf-8 1.9791ms
+2024-09-20 05:17:28.672 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/booking - null null
+2024-09-20 05:17:28.673 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:28.673 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/booking - 204 null null 0.4845ms
+2024-09-20 05:17:28.674 +00:00 [INF] Request starting HTTP/1.1 POST http://localhost:5059/api/booking - application/json 39
+2024-09-20 05:17:28.674 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:28.676 +00:00 [INF] Executing endpoint 'Backend.Controllers.BookingController.Post (Backend)'
+2024-09-20 05:17:28.678 +00:00 [INF] Route matched with {action = "Post", controller = "Booking"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Post(Backend.DTO.BookingDTO) on controller Backend.Controllers.BookingController (Backend).
+2024-09-20 05:17:28.775 +00:00 [INF] Executing OkObjectResult, writing value of type 'Backend.Models.Booking'.
+2024-09-20 05:17:28.781 +00:00 [INF] Executed action Backend.Controllers.BookingController.Post (Backend) in 102.8618ms
+2024-09-20 05:17:28.781 +00:00 [INF] Executed endpoint 'Backend.Controllers.BookingController.Post (Backend)'
+2024-09-20 05:17:28.781 +00:00 [INF] Request finished HTTP/1.1 POST http://localhost:5059/api/booking - 200 null application/json; charset=utf-8 106.5087ms
+2024-09-20 05:17:32.347 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Booking - null null
+2024-09-20 05:17:32.347 +00:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5059/api/Booking - null null
+2024-09-20 05:17:32.347 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:32.347 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:32.347 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Booking - 204 null null 0.3099ms
+2024-09-20 05:17:32.347 +00:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5059/api/Booking - 204 null null 0.3331ms
+2024-09-20 05:17:32.349 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Booking - null null
+2024-09-20 05:17:32.349 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:32.351 +00:00 [INF] Executing endpoint 'Backend.Controllers.BookingController.Get (Backend)'
+2024-09-20 05:17:32.353 +00:00 [INF] Route matched with {action = "Get", controller = "Booking"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.BookingController (Backend).
+2024-09-20 05:17:32.355 +00:00 [INF] Booking Log Information
+2024-09-20 05:17:32.391 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`14[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.TimeOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.TimeOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.ICollection`1[[Backend.Models.BookedSlot, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-20 05:17:32.400 +00:00 [INF] Executed action Backend.Controllers.BookingController.Get (Backend) in 46.5465ms
+2024-09-20 05:17:32.400 +00:00 [INF] Executed endpoint 'Backend.Controllers.BookingController.Get (Backend)'
+2024-09-20 05:17:32.400 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Booking - 200 null application/json; charset=utf-8 50.6701ms
+2024-09-20 05:17:32.401 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:5059/api/Booking - null null
+2024-09-20 05:17:32.401 +00:00 [INF] CORS policy execution successful.
+2024-09-20 05:17:32.402 +00:00 [INF] Executing endpoint 'Backend.Controllers.BookingController.Get (Backend)'
+2024-09-20 05:17:32.402 +00:00 [INF] Route matched with {action = "Get", controller = "Booking"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Get() on controller Backend.Controllers.BookingController (Backend).
+2024-09-20 05:17:32.403 +00:00 [INF] Booking Log Information
+2024-09-20 05:17:32.407 +00:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[<>f__AnonymousType0`14[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.DateTime, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Double, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.TimeOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.TimeOnly, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.ICollection`1[[Backend.Models.BookedSlot, Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-20 05:17:32.407 +00:00 [INF] Executed action Backend.Controllers.BookingController.Get (Backend) in 5.4381ms
+2024-09-20 05:17:32.407 +00:00 [INF] Executed endpoint 'Backend.Controllers.BookingController.Get (Backend)'
+2024-09-20 05:17:32.407 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:5059/api/Booking - 200 null application/json; charset=utf-8 6.2518ms

@@ -27,8 +27,6 @@ namespace Backend.Controllers
             {
                 var x = _service.GetTopRatedVenues();
 
-                Console.WriteLine("controller");
-                Console.WriteLine(x[0].Images[0]);
                 res.TopRatedVenues = x;
             }
             if(topBooked != null && topBooked == true)
