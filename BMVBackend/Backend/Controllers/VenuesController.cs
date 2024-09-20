@@ -25,7 +25,11 @@ namespace Backend.Controllers
             var res = new GetVenuesDTO();
             if (topRated!= null && topRated == true)
             {
-                res.TopRatedVenues = _service.GetTopRatedVenues();
+                var x = _service.GetTopRatedVenues();
+
+                Console.WriteLine("controller");
+                Console.WriteLine(x[0].Images[0]);
+                res.TopRatedVenues = x;
             }
             if(topBooked != null && topBooked == true)
             {
@@ -39,6 +43,7 @@ namespace Backend.Controllers
             if (v == null) {
                 return BadRequest();
             }
+            Console.WriteLine(46);
             return Ok(v);
         }
 
@@ -59,7 +64,7 @@ namespace Backend.Controllers
         // POST api/<VenueController>
         [HttpPost]
         [Authorize]
-        public IActionResult Post([FromBody] PostVenueDTO venueWithSlotDetails)
+        public IActionResult Post(PostVenueDTO venueWithSlotDetails)
         {
             var providerId = User.Claims.FirstOrDefault(c => c.Type == "ProviderId")?.Value;
             if(providerId == null)

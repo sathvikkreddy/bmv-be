@@ -23,7 +23,7 @@ namespace Backend
             builder.Services.AddScoped<IBookingService, BookingService>();
             var logger = new LoggerConfiguration().WriteTo.File("C:\\Users\\pulkit\\Desktop\\work\\Project\\backend\\BMVBackend\\Backend\\Logs\\Bookings.txt", rollingInterval: RollingInterval.Day).CreateLogger();
             builder.Services.AddSerilog(logger);
-
+           
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -51,7 +51,7 @@ namespace Backend
                 options.AllowAnyHeader();
                 options.AllowAnyOrigin();
             });
-            
+            app.UseStaticFiles();
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {

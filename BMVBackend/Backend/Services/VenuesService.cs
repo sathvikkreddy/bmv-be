@@ -1,6 +1,8 @@
 ﻿using Backend.DTO.Venue;
+using Backend.Helpers;
 using Backend.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Services
@@ -15,6 +17,7 @@ namespace Backend.Services
         public List<Venue> GetTopRatedVenues()
         {
             var topRatedVenues = _bmvContext.Venues.OrderByDescending(v => v.Rating).Take(5).ToList();
+            Console.WriteLine(topRatedVenues[0].Images[0]);
             return topRatedVenues;
         }
         public List<Venue> GetTopBookedVenues()
@@ -57,9 +60,26 @@ namespace Backend.Services
             v.Latitude = venueWithSlotDetails.Latitude;
             v.Longitude = venueWithSlotDetails.Longitude;
             v.ProviderId = 1;
-            v.Image1 = "";
-            v.Image2 = "";
-            v.Image3 = "";
+            List<string> images = new List<string>();
+            string path = "../wwwroot/images/";
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+            ImageHelper imageHelper = new ImageHelper();
+            foreach (IFormFile files in venueWithSlotDetails.Images)
+            {
+
+                if (files != null)
+                {
+                    if (files.Length > 0)
+                    {
+
+                        images.Add(imageHelper.storeImage(files));
+                    }
+                }
+            }
+            v.Images = images;
             Category c = _bmvContext.Categories.Where(c => c.Name == venueWithSlotDetails.Category).FirstOrDefault();
             if (c == null)
             {
@@ -117,9 +137,6 @@ namespace Backend.Services
                 uv.Rating = v.Rating == null ? uv.Rating : (float)v.Rating;
                 uv.Latitude = v.Latitude == null ? uv.Latitude : (float)uv.Latitude;
                 uv.Longitude = v.Longitude == null ? uv.Longitude : (float)uv.Longitude;
-                uv.Image1 = v.Image1 == null ? uv.Image1 : v.Image1;
-                uv.Image2 = v.Image2 == null ? uv.Image2 : v.Image2;
-                uv.Image3 = v.Image3 == null ? uv.Image3 : v.Image3;
                 _bmvContext.SaveChanges();
                 return uv;
             }
