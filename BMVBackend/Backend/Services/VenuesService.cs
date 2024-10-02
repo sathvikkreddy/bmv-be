@@ -59,7 +59,7 @@ namespace Backend.Services
             v.City = venueWithSlotDetails.City;
             v.Latitude = venueWithSlotDetails.Latitude;
             v.Longitude = venueWithSlotDetails.Longitude;
-            v.ProviderId = 1;
+            v.ProviderId = id;
             List<string> images = new List<string>();
             string path = "../wwwroot/images/";
             if (!Directory.Exists(path))

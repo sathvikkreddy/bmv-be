@@ -15,7 +15,7 @@ namespace Backend
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"server=.\sqlexpress;initial catalog=bmv;user id=sa;password=Pass@123;trustservercertificate=true");
+            optionsBuilder.UseSqlServer(@"server=ACT-5CD4184CNG;initial catalog=bmv;Integrated Security=True;trustservercertificate=true");
         }
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{

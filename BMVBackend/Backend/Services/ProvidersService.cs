@@ -22,6 +22,7 @@ namespace Backend.Services
         }
         public Provider GetProviderById(int id)
         {
+            Console.WriteLine("provider with id "+id.ToString());
             var p = _bmvContext.Providers
     .Include(p => p.Bookings)
     .Include(p => p.Venues)
